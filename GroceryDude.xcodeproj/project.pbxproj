@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		CB381D112234A64500D16E87 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB381D102234A64500D16E87 /* CoreData.framework */; };
 		CB381D162234A6AE00D16E87 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB381D152234A6AE00D16E87 /* CoreDataHelper.m */; };
+		CB381D202234F48C00D16E87 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB381D1E2234F48C00D16E87 /* Model.xcdatamodeld */; };
+		CB381D302234F90000D16E87 /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB381D2A2234F4EA00D16E87 /* Item+CoreDataProperties.m */; };
+		CB381D312234F90000D16E87 /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB381D292234F4EA00D16E87 /* Item+CoreDataClass.m */; };
 		CBA4499B2234A23A0041ACA7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA4499A2234A23A0041ACA7 /* AppDelegate.m */; };
 		CBA4499E2234A23A0041ACA7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA4499D2234A23A0041ACA7 /* ViewController.m */; };
 		CBA449A12234A23A0041ACA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA4499F2234A23A0041ACA7 /* Main.storyboard */; };
-		CBA449A42234A23A0041ACA7 /* GroceryDude.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBA449A22234A23A0041ACA7 /* GroceryDude.xcdatamodeld */; };
 		CBA449A62234A23B0041ACA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBA449A52234A23B0041ACA7 /* Assets.xcassets */; };
 		CBA449A92234A23B0041ACA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA449A72234A23B0041ACA7 /* LaunchScreen.storyboard */; };
 		CBA449AC2234A23B0041ACA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA449AB2234A23B0041ACA7 /* main.m */; };
@@ -22,13 +24,17 @@
 		CB381D102234A64500D16E87 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CB381D142234A6AE00D16E87 /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		CB381D152234A6AE00D16E87 /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		CB381D1F2234F48C00D16E87 /* GroceryDude.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GroceryDude.xcdatamodel; sourceTree = "<group>"; };
+		CB381D272234F4EA00D16E87 /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataProperties.h"; sourceTree = "<group>"; };
+		CB381D282234F4EA00D16E87 /* Item+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataClass.h"; sourceTree = "<group>"; };
+		CB381D292234F4EA00D16E87 /* Item+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataClass.m"; sourceTree = "<group>"; };
+		CB381D2A2234F4EA00D16E87 /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
 		CBA449962234A23A0041ACA7 /* GroceryDude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryDude.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA449992234A23A0041ACA7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CBA4499A2234A23A0041ACA7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CBA4499C2234A23A0041ACA7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CBA4499D2234A23A0041ACA7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CBA449A02234A23A0041ACA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CBA449A32234A23A0041ACA7 /* GroceryDude.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GroceryDude.xcdatamodel; sourceTree = "<group>"; };
 		CBA449A52234A23B0041ACA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBA449A82234A23B0041ACA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBA449AA2234A23B0041ACA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,13 +61,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CB381D172234E87600D16E87 /* CoreDataHelper */ = {
+		CB381D172234E87600D16E87 /* Core Data Helper */ = {
 			isa = PBXGroup;
 			children = (
 				CB381D142234A6AE00D16E87 /* CoreDataHelper.h */,
 				CB381D152234A6AE00D16E87 /* CoreDataHelper.m */,
 			);
-			name = CoreDataHelper;
+			name = "Core Data Helper";
+			sourceTree = "<group>";
+		};
+		CB381D182234EB9B00D16E87 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CBA4499F2234A23A0041ACA7 /* Main.storyboard */,
+				CBA449A72234A23B0041ACA7 /* LaunchScreen.storyboard */,
+				CBA449A52234A23B0041ACA7 /* Assets.xcassets */,
+				CBA449AA2234A23B0041ACA7 /* Info.plist */,
+				CBA449AB2234A23B0041ACA7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CB381D192234EBBF00D16E87 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CBA449992234A23A0041ACA7 /* AppDelegate.h */,
+				CBA4499A2234A23A0041ACA7 /* AppDelegate.m */,
+				CBA4499C2234A23A0041ACA7 /* ViewController.h */,
+				CBA4499D2234A23A0041ACA7 /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CB381D1A2234EBCB00D16E87 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB381D272234F4EA00D16E87 /* Item+CoreDataProperties.h */,
+				CB381D2A2234F4EA00D16E87 /* Item+CoreDataProperties.m */,
+				CB381D282234F4EA00D16E87 /* Item+CoreDataClass.h */,
+				CB381D292234F4EA00D16E87 /* Item+CoreDataClass.m */,
+				CB381D1E2234F48C00D16E87 /* Model.xcdatamodeld */,
+			);
+			name = "Data Models";
 			sourceTree = "<group>";
 		};
 		CBA4498D2234A23A0041ACA7 = {
@@ -84,17 +125,10 @@
 		CBA449982234A23A0041ACA7 /* GroceryDude */ = {
 			isa = PBXGroup;
 			children = (
-				CB381D172234E87600D16E87 /* CoreDataHelper */,
-				CBA449992234A23A0041ACA7 /* AppDelegate.h */,
-				CBA4499A2234A23A0041ACA7 /* AppDelegate.m */,
-				CBA4499C2234A23A0041ACA7 /* ViewController.h */,
-				CBA4499D2234A23A0041ACA7 /* ViewController.m */,
-				CBA4499F2234A23A0041ACA7 /* Main.storyboard */,
-				CBA449A52234A23B0041ACA7 /* Assets.xcassets */,
-				CBA449A72234A23B0041ACA7 /* LaunchScreen.storyboard */,
-				CBA449AA2234A23B0041ACA7 /* Info.plist */,
-				CBA449AB2234A23B0041ACA7 /* main.m */,
-				CBA449A22234A23A0041ACA7 /* GroceryDude.xcdatamodeld */,
+				CB381D1A2234EBCB00D16E87 /* Data Models */,
+				CB381D192234EBBF00D16E87 /* Controllers */,
+				CB381D172234E87600D16E87 /* Core Data Helper */,
+				CB381D182234EB9B00D16E87 /* Supporting Files */,
 			);
 			path = GroceryDude;
 			sourceTree = "<group>";
@@ -169,9 +203,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBA449A42234A23A0041ACA7 /* GroceryDude.xcdatamodeld in Sources */,
+				CB381D302234F90000D16E87 /* Item+CoreDataProperties.m in Sources */,
+				CB381D312234F90000D16E87 /* Item+CoreDataClass.m in Sources */,
 				CBA4499E2234A23A0041ACA7 /* ViewController.m in Sources */,
 				CBA449AC2234A23B0041ACA7 /* main.m in Sources */,
+				CB381D202234F48C00D16E87 /* Model.xcdatamodeld in Sources */,
 				CB381D162234A6AE00D16E87 /* CoreDataHelper.m in Sources */,
 				CBA4499B2234A23A0041ACA7 /* AppDelegate.m in Sources */,
 			);
@@ -371,13 +407,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		CBA449A22234A23A0041ACA7 /* GroceryDude.xcdatamodeld */ = {
+		CB381D1E2234F48C00D16E87 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				CBA449A32234A23A0041ACA7 /* GroceryDude.xcdatamodel */,
+				CB381D1F2234F48C00D16E87 /* GroceryDude.xcdatamodel */,
 			);
-			currentVersion = CBA449A32234A23A0041ACA7 /* GroceryDude.xcdatamodel */;
-			path = GroceryDude.xcdatamodeld;
+			currentVersion = CB381D1F2234F48C00D16E87 /* GroceryDude.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

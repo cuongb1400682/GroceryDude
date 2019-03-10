@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "Item+CoreDataProperties.h"
+#import "Item+CoreDataClass.h"
 
 @implementation AppDelegate
 
@@ -16,6 +18,15 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
   [[self cdh] saveContext];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+#if DEBUG
+  NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
+#endif
+  
+  [self cdh];
+  [self demo];
 }
 
 - (CoreDataHelper *)cdh {
@@ -29,6 +40,21 @@
   }
   
   return _coreDataHelper;
+}
+
+- (void)demo {
+#if DEBUG
+  NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
+#endif
+  
+  NSArray *newItemNames = [NSArray arrayWithObjects:@"Orange", @"Apple", @"Kiwi", @"Banana", @"Teapot", @"Toothbrush", @"Sticker", @"Magnet", @"Glue", nil];
+  
+  for (NSString *itemName in newItemNames) {
+    Item *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"Item"
+                                                  inManagedObjectContext:_coreDataHelper.context];
+    newItem.name = itemName;
+    NSLog(@"Inserted new item for: %@", newItem.name);
+  }
 }
 
 @end
