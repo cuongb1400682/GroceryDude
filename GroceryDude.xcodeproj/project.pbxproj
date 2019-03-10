@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB381D112234A64500D16E87 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB381D102234A64500D16E87 /* CoreData.framework */; };
+		CB381D162234A6AE00D16E87 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB381D152234A6AE00D16E87 /* CoreDataHelper.m */; };
 		CBA4499B2234A23A0041ACA7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA4499A2234A23A0041ACA7 /* AppDelegate.m */; };
 		CBA4499E2234A23A0041ACA7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA4499D2234A23A0041ACA7 /* ViewController.m */; };
 		CBA449A12234A23A0041ACA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA4499F2234A23A0041ACA7 /* Main.storyboard */; };
@@ -17,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB381D102234A64500D16E87 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CB381D142234A6AE00D16E87 /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		CB381D152234A6AE00D16E87 /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		CBA449962234A23A0041ACA7 /* GroceryDude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryDude.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA449992234A23A0041ACA7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CBA4499A2234A23A0041ACA7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -35,17 +40,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB381D112234A64500D16E87 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB381D0F2234A64500D16E87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB381D102234A64500D16E87 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB381D172234E87600D16E87 /* CoreDataHelper */ = {
+			isa = PBXGroup;
+			children = (
+				CB381D142234A6AE00D16E87 /* CoreDataHelper.h */,
+				CB381D152234A6AE00D16E87 /* CoreDataHelper.m */,
+			);
+			name = CoreDataHelper;
+			sourceTree = "<group>";
+		};
 		CBA4498D2234A23A0041ACA7 = {
 			isa = PBXGroup;
 			children = (
 				CBA449982234A23A0041ACA7 /* GroceryDude */,
 				CBA449972234A23A0041ACA7 /* Products */,
+				CB381D0F2234A64500D16E87 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +84,7 @@
 		CBA449982234A23A0041ACA7 /* GroceryDude */ = {
 			isa = PBXGroup;
 			children = (
+				CB381D172234E87600D16E87 /* CoreDataHelper */,
 				CBA449992234A23A0041ACA7 /* AppDelegate.h */,
 				CBA4499A2234A23A0041ACA7 /* AppDelegate.m */,
 				CBA4499C2234A23A0041ACA7 /* ViewController.h */,
@@ -147,6 +172,7 @@
 				CBA449A42234A23A0041ACA7 /* GroceryDude.xcdatamodeld in Sources */,
 				CBA4499E2234A23A0041ACA7 /* ViewController.m in Sources */,
 				CBA449AC2234A23B0041ACA7 /* main.m in Sources */,
+				CB381D162234A6AE00D16E87 /* CoreDataHelper.m in Sources */,
 				CBA4499B2234A23A0041ACA7 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,13 +318,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZP24FBUW2V;
 				INFOPLIST_FILE = GroceryDude/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.omega.tutorial.GroceryDude;
+				PRODUCT_BUNDLE_IDENTIFIER = com.omega.tutorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -309,13 +336,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZP24FBUW2V;
 				INFOPLIST_FILE = GroceryDude/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.omega.tutorial.GroceryDude;
+				PRODUCT_BUNDLE_IDENTIFIER = com.omega.tutorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
