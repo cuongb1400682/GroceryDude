@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "Item+CoreDataProperties.h"
 #import "Item+CoreDataClass.h"
+//#import "Measurement+CoreDataClass.h"
+//#import "Measurement+CoreDataProperties.h"
+#import "Amount+CoreDataClass.h"
+#import "Amount+CoreDataProperties.h"
 
 @implementation AppDelegate
 
@@ -46,14 +50,61 @@
 #if DEBUG
   NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
 #endif
+
+//  NSArray *newItemNames = [NSArray arrayWithObjects:@"Orange", @"Apple", @"Kiwi", @"Banana", @"Teapot", @"Toothbrush", @"Sticker", @"Magnet", @"Glue", nil];
+//
+//  for (NSString *itemName in newItemNames) {
+//    Item *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"Item"
+//                                                  inManagedObjectContext:_coreDataHelper.context];
+//    newItem.name = itemName;
+//    NSLog(@"Inserted new item for: %@", newItem.name);
+//  }
   
-  NSArray *newItemNames = [NSArray arrayWithObjects:@"Orange", @"Apple", @"Kiwi", @"Banana", @"Teapot", @"Toothbrush", @"Sticker", @"Magnet", @"Glue", nil];
+//  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
+//  [request setPredicate:[NSPredicate predicateWithFormat:@"%K CONTAINS[cd] %@", @"name", @"a"]];
   
-  for (NSString *itemName in newItemNames) {
-    Item *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"Item"
-                                                  inManagedObjectContext:_coreDataHelper.context];
-    newItem.name = itemName;
-    NSLog(@"Inserted new item for: %@", newItem.name);
+//  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"
+//                                                                 ascending:NO];
+  
+//  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name != %@", @"Teapot"];
+  
+//  [request setPredicate:predicate];
+//  [request setSortDescriptors:@[sortDescriptor]];
+  
+//  NSArray *result = [[self.coreDataHelper context] executeFetchRequest:request
+//                                                                 error:nil];
+//
+//  for (Item *item in result) {
+//    NSLog(@"Fetch Object = %@", [item name]);
+//  }
+  
+//  for (int i = 0; i < 50; i++) {
+//    Measurement *newMeasurement = [NSEntityDescription insertNewObjectForEntityForName:@"Measurement"
+//                                                                inManagedObjectContext:_coreDataHelper.context];
+//
+//    newMeasurement.abc = [NSString stringWithFormat:@"--->> LOST OF TEST DATA x%i", i];
+//  }
+//  [_coreDataHelper saveContext];
+//
+//  NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"Measurement"];
+//
+//  NSArray *result = [_coreDataHelper.context executeFetchRequest:request error:nil];
+//  for (Measurement *item in result) {
+//    NSLog(@"%@", [item abc]);
+//  }
+  
+  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Amount"];
+  [request setFetchLimit:50];
+  NSError *error = nil;
+  NSArray *fetchedObjects = [_coreDataHelper.context executeFetchRequest:request
+                                                                  error:&error];
+
+  if (error) {
+    NSLog(@"%@", [error description]);
+  } else {
+    for (Amount *amount in fetchedObjects) {
+      NSLog(@"Fetched Object = %@", [amount xyz]);
+    }
   }
 }
 

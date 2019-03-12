@@ -6,10 +6,13 @@
         <attribute name="name" optional="YES" attributeType="String" defaultValueString="New Item" syncable="YES"/>
         <attribute name="photoData" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Float" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="relationship" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <entity name="Measurement" representedClassName="Measurement" syncable="YES">
+        <attribute name="abc" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <fetchRequest name="ContainsLetterA" entity="Item" predicateString="name BEGINSWITH &quot;A&quot;"/>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Item" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Measurement" positionX="-54" positionY="27" width="128" height="60"/>
     </elements>
 </model>
