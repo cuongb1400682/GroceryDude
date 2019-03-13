@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#import "MigrationVC.h";
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CoreDataHelper : NSObject
@@ -17,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSManagedObjectModel * model;
 @property (nonatomic, readonly) NSPersistentStoreCoordinator *coordinator;
 @property (nonatomic, readonly) NSPersistentStore *store;
+@property (nonatomic, retain) MigrationVC *migrationVC;
 
 - (void)setupCoreData;
 - (void)saveContext;

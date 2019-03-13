@@ -17,6 +17,7 @@
 		CB85038322374364005884C1 /* Amount+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB85038122374364005884C1 /* Amount+CoreDataClass.m */; };
 		CB85038422374364005884C1 /* Amount+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB85038222374364005884C1 /* Amount+CoreDataProperties.m */; };
 		CB85038622374415005884C1 /* Model2toModel3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = CB85038522374415005884C1 /* Model2toModel3.xcmappingmodel */; };
+		CB850389223749CD005884C1 /* MigrationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB850388223749CD005884C1 /* MigrationVC.m */; };
 		CBA4499B2234A23A0041ACA7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA4499A2234A23A0041ACA7 /* AppDelegate.m */; };
 		CBA4499E2234A23A0041ACA7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA4499D2234A23A0041ACA7 /* ViewController.m */; };
 		CBA449A12234A23A0041ACA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA4499F2234A23A0041ACA7 /* Main.storyboard */; };
@@ -45,6 +46,8 @@
 		CB85038122374364005884C1 /* Amount+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Amount+CoreDataClass.m"; sourceTree = "<group>"; };
 		CB85038222374364005884C1 /* Amount+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Amount+CoreDataProperties.m"; sourceTree = "<group>"; };
 		CB85038522374415005884C1 /* Model2toModel3.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Model2toModel3.xcmappingmodel; sourceTree = "<group>"; };
+		CB850387223749CD005884C1 /* MigrationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MigrationVC.h; sourceTree = "<group>"; };
+		CB850388223749CD005884C1 /* MigrationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MigrationVC.m; sourceTree = "<group>"; };
 		CBA449962234A23A0041ACA7 /* GroceryDude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryDude.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA449992234A23A0041ACA7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CBA4499A2234A23A0041ACA7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 				CBA4499A2234A23A0041ACA7 /* AppDelegate.m */,
 				CBA4499C2234A23A0041ACA7 /* ViewController.h */,
 				CBA4499D2234A23A0041ACA7 /* ViewController.m */,
+				CB850387223749CD005884C1 /* MigrationVC.h */,
+				CB850388223749CD005884C1 /* MigrationVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				CB85038622374415005884C1 /* Model2toModel3.xcmappingmodel in Sources */,
 				CBA4499E2234A23A0041ACA7 /* ViewController.m in Sources */,
 				CBA449AC2234A23B0041ACA7 /* main.m in Sources */,
+				CB850389223749CD005884C1 /* MigrationVC.m in Sources */,
 				CB7B00762235F0EF004ED213 /* Measurement+CoreDataProperties.m in Sources */,
 				CB381D202234F48C00D16E87 /* Model.xcdatamodeld in Sources */,
 				CB381D162234A6AE00D16E87 /* CoreDataHelper.m in Sources */,

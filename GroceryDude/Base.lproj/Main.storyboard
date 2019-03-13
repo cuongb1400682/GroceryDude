@@ -69,6 +69,50 @@
             </objects>
             <point key="canvasLocation" x="1442" y="149"/>
         </scene>
+        <!--MigrationVC-->
+        <scene sceneID="FZC-Cl-LZU">
+            <objects>
+                <viewController storyboardIdentifier="migration" id="nx2-HC-hJJ" customClass="MigrationVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="45g-nx-4DP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4yM-Hy-cbT">
+                                <rect key="frame" x="16" y="422" width="382" height="52.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Migration Progress 0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4q-j2-pHA">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QHs-Tv-N24">
+                                        <rect key="frame" x="0.0" y="50.5" width="382" height="2"/>
+                                    </progressView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="J4q-j2-pHA" firstAttribute="width" secondItem="4yM-Hy-cbT" secondAttribute="width" id="7XX-Cp-0wJ"/>
+                                    <constraint firstItem="QHs-Tv-N24" firstAttribute="width" secondItem="4yM-Hy-cbT" secondAttribute="width" id="dpJ-Cp-AyV"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OZm-QS-MTZ" firstAttribute="trailing" secondItem="4yM-Hy-cbT" secondAttribute="trailing" constant="16" id="08V-e7-h7X"/>
+                            <constraint firstItem="4yM-Hy-cbT" firstAttribute="centerY" secondItem="45g-nx-4DP" secondAttribute="centerY" id="ND9-U7-jOa"/>
+                            <constraint firstItem="4yM-Hy-cbT" firstAttribute="leading" secondItem="OZm-QS-MTZ" secondAttribute="leading" constant="16" id="tSJ-Ef-vpk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OZm-QS-MTZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="J4q-j2-pHA" id="KRL-ev-pHV"/>
+                        <outlet property="progressView" destination="QHs-Tv-N24" id="L7E-3Z-Wu7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dWB-kN-0Qp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-375.36231884057975" y="-556.47321428571422"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="6cG-jz-JMU">
             <objects>
