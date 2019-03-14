@@ -146,25 +146,25 @@
 //  NSLog(@"Inserted %d%@ %@", [bananas quantity], [[bananas unit] name], [bananas name]);
 //  [[self cdh] saveContext];
   
-  NSLog(@"Before deletion of the unit entity:");
-  [self showUnitAndItemCount];
-  
-  NSError *error = nil;
-  NSFetchRequest *request = [Unit fetchRequest];
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", @"Kg"];
-  [request setPredicate:predicate];
-  NSArray *kgUnit = [[[self cdh] context] executeFetchRequest:request error:&error];
-  for (Unit *unit in kgUnit) {
-    if ([unit validateForDelete:&error]) {
-      [[[self cdh] context] deleteObject:unit];
-      NSLog(@"A Kg u nit object has been deleted");
-    } else {
-      NSLog(@"Failed to delete: %@", [error localizedDescription]);
-    }
-  }
-  
-  NSLog(@"After deletion of the unit enity");
-  [self showUnitAndItemCount];
+//  NSLog(@"Before deletion of the unit entity:");
+//  [self showUnitAndItemCount];
+//
+//  NSError *error = nil;
+//  NSFetchRequest *request = [Unit fetchRequest];
+//  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", @"Kg"];
+//  [request setPredicate:predicate];
+//  NSArray *kgUnit = [[[self cdh] context] executeFetchRequest:request error:&error];
+//  for (Unit *unit in kgUnit) {
+//    if ([unit validateForDelete:&error]) {
+//      [[[self cdh] context] deleteObject:unit];
+//      NSLog(@"A Kg u nit object has been deleted");
+//    } else {
+//      NSLog(@"Failed to delete: %@", [error localizedDescription]);
+//    }
+//  }
+//
+//  NSLog(@"After deletion of the unit enity");
+//  [self showUnitAndItemCount];
 }
 
 - (void)showUnitAndItemCount {
