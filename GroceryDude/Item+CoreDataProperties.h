@@ -2,13 +2,13 @@
 //  Item+CoreDataProperties.h
 //  GroceryDude
 //
-//  Created by Nguyễn Tấn Cường on 3/10/19.
+//  Created by Nguyễn Tấn Cường on 3/14/19.
 //  Copyright © 2019 Nguyễn Tấn Cường. All rights reserved.
 //
 //
 
 #import "Item+CoreDataClass.h"
-
+#import "Unit+CoreDataProperties.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,7 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL listed;
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, retain) NSData *photoData;
-@property (nonatomic) float quantity;
+@property (nonatomic) int32_t quantity;
+@property (nullable, nonatomic, retain) Unit *unit;
 
 @end
 

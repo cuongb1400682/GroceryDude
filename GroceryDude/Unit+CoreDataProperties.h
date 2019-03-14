@@ -8,7 +8,7 @@
 //
 
 #import "Unit+CoreDataClass.h"
-
+#import "Item+CoreDataProperties.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +17,16 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSFetchRequest<Unit *> *)fetchRequest;
 
 @property (nullable, nonatomic, copy) NSString *name;
+@property (nullable, nonatomic, retain) NSSet<Item *> *items;
+
+@end
+
+@interface Unit (CoreDataGeneratedAccessors)
+
+- (void)addItemsObject:(Item *)value;
+- (void)removeItemsObject:(Item *)value;
+- (void)addItems:(NSSet<Item *> *)values;
+- (void)removeItems:(NSSet<Item *> *)values;
 
 @end
 

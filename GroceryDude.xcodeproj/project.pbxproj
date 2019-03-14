@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB0B6BF5223A0DC0000675DB /* Model.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = CB0B6BF4223A0DC0000675DB /* Model.xcmappingmodel */; };
 		CB0B6BFA223A0DE8000675DB /* Unit+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0B6BF8223A0DE8000675DB /* Unit+CoreDataClass.m */; };
 		CB0B6BFB223A0DE8000675DB /* Unit+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0B6BF9223A0DE8000675DB /* Unit+CoreDataProperties.m */; };
 		CB381D112234A64500D16E87 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB381D102234A64500D16E87 /* CoreData.framework */; };
@@ -17,6 +16,7 @@
 		CB381D312234F90000D16E87 /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB381D292234F4EA00D16E87 /* Item+CoreDataClass.m */; };
 		CB7B00752235F0EF004ED213 /* Measurement+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7B00732235F0EF004ED213 /* Measurement+CoreDataClass.m */; };
 		CB7B00762235F0EF004ED213 /* Measurement+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7B00742235F0EF004ED213 /* Measurement+CoreDataProperties.m */; };
+		CB845982223A368300E759AE /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB845981223A368300E759AE /* Item+CoreDataProperties.m */; };
 		CB85038322374364005884C1 /* Amount+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB85038122374364005884C1 /* Amount+CoreDataClass.m */; };
 		CB85038422374364005884C1 /* Amount+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB85038222374364005884C1 /* Amount+CoreDataProperties.m */; };
 		CB850389223749CD005884C1 /* MigrationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB850388223749CD005884C1 /* MigrationVC.m */; };
@@ -30,7 +30,6 @@
 
 /* Begin PBXFileReference section */
 		CB0B6BF1223A0C91000675DB /* GroceryDude 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 4.xcdatamodel"; sourceTree = "<group>"; };
-		CB0B6BF4223A0DC0000675DB /* Model.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Model.xcmappingmodel; sourceTree = "<group>"; };
 		CB0B6BF6223A0DE8000675DB /* Unit+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit+CoreDataProperties.h"; sourceTree = "<group>"; };
 		CB0B6BF7223A0DE8000675DB /* Unit+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit+CoreDataClass.h"; sourceTree = "<group>"; };
 		CB0B6BF8223A0DE8000675DB /* Unit+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Unit+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -48,6 +47,8 @@
 		CB7B00722235F0EF004ED213 /* Measurement+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataClass.h"; sourceTree = "<group>"; };
 		CB7B00732235F0EF004ED213 /* Measurement+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Measurement+CoreDataClass.m"; sourceTree = "<group>"; };
 		CB7B00742235F0EF004ED213 /* Measurement+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Measurement+CoreDataProperties.m"; sourceTree = "<group>"; };
+		CB845977223A319F00E759AE /* GroceryDude 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 5.xcdatamodel"; sourceTree = "<group>"; };
+		CB845981223A368300E759AE /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Item+CoreDataProperties.m"; path = "GroceryDude/Item+CoreDataProperties.m"; sourceTree = "<group>"; };
 		CB85037E2237431B005884C1 /* GroceryDude 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 3.xcdatamodel"; sourceTree = "<group>"; };
 		CB85037F22374364005884C1 /* Amount+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Amount+CoreDataProperties.h"; sourceTree = "<group>"; };
 		CB85038022374364005884C1 /* Amount+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Amount+CoreDataClass.h"; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		CBA449A82234A23B0041ACA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBA449AA2234A23B0041ACA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBA449AB2234A23B0041ACA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CBEA2EE32235423300F27141 /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Item+CoreDataProperties.h"; path = "GroceryDude/Item+CoreDataProperties.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +142,6 @@
 				CB0B6BF8223A0DE8000675DB /* Unit+CoreDataClass.m */,
 				CB0B6BF9223A0DE8000675DB /* Unit+CoreDataProperties.m */,
 				CB381D1E2234F48C00D16E87 /* Model.xcdatamodeld */,
-				CB0B6BF4223A0DC0000675DB /* Model.xcmappingmodel */,
 			);
 			name = "Data Models";
 			sourceTree = "<group>";
@@ -150,7 +149,7 @@
 		CBA4498D2234A23A0041ACA7 = {
 			isa = PBXGroup;
 			children = (
-				CBEA2EE32235423300F27141 /* Item+CoreDataProperties.h */,
+				CB845981223A368300E759AE /* Item+CoreDataProperties.m */,
 				CBA449982234A23A0041ACA7 /* GroceryDude */,
 				CBA449972234A23A0041ACA7 /* Products */,
 				CB381D0F2234A64500D16E87 /* Frameworks */,
@@ -249,11 +248,11 @@
 				CB7B00752235F0EF004ED213 /* Measurement+CoreDataClass.m in Sources */,
 				CB381D302234F90000D16E87 /* Item+CoreDataProperties.m in Sources */,
 				CB381D312234F90000D16E87 /* Item+CoreDataClass.m in Sources */,
+				CB845982223A368300E759AE /* Item+CoreDataProperties.m in Sources */,
 				CB85038322374364005884C1 /* Amount+CoreDataClass.m in Sources */,
 				CB85038422374364005884C1 /* Amount+CoreDataProperties.m in Sources */,
 				CBA4499E2234A23A0041ACA7 /* ViewController.m in Sources */,
 				CB0B6BFB223A0DE8000675DB /* Unit+CoreDataProperties.m in Sources */,
-				CB0B6BF5223A0DC0000675DB /* Model.xcmappingmodel in Sources */,
 				CBA449AC2234A23B0041ACA7 /* main.m in Sources */,
 				CB850389223749CD005884C1 /* MigrationVC.m in Sources */,
 				CB0B6BFA223A0DE8000675DB /* Unit+CoreDataClass.m in Sources */,
@@ -461,12 +460,13 @@
 		CB381D1E2234F48C00D16E87 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				CB845977223A319F00E759AE /* GroceryDude 5.xcdatamodel */,
 				CB0B6BF1223A0C91000675DB /* GroceryDude 4.xcdatamodel */,
 				CB85037E2237431B005884C1 /* GroceryDude 3.xcdatamodel */,
 				CB7B00702235EF72004ED213 /* GroceryDude 2.xcdatamodel */,
 				CB381D1F2234F48C00D16E87 /* GroceryDude.xcdatamodel */,
 			);
-			currentVersion = CB0B6BF1223A0C91000675DB /* GroceryDude 4.xcdatamodel */;
+			currentVersion = CB845977223A319F00E759AE /* GroceryDude 5.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

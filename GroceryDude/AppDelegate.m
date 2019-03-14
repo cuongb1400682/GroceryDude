@@ -53,14 +53,16 @@
   NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
 #endif
 
-//  NSArray *newItemNames = [NSArray arrayWithObjects:@"Orange", @"Apple", @"Kiwi", @"Banana", @"Teapot", @"Toothbrush", @"Sticker", @"Magnet", @"Glue", nil];
-//
-//  for (NSString *itemName in newItemNames) {
-//    Item *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"Item"
-//                                                  inManagedObjectContext:_coreDataHelper.context];
-//    newItem.name = itemName;
-//    NSLog(@"Inserted new item for: %@", newItem.name);
-//  }
+  NSArray *newItemNames = [NSArray arrayWithObjects:@"Orange", @"Apple", @"Kiwi", @"Banana", @"Teapot", @"Toothbrush", @"Sticker", @"Magnet", @"Glue", nil];
+
+  for (NSString *itemName in newItemNames) {
+    Item *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"Item"
+                                                  inManagedObjectContext:_coreDataHelper.context];
+    newItem.name = itemName;
+    NSLog(@"Inserted new item for: %@", newItem.name);
+  }
+  
+  [[self cdh] saveContext];
   
 //  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
 //  [request setPredicate:[NSPredicate predicateWithFormat:@"%K CONTAINS[cd] %@", @"name", @"a"]];
@@ -109,18 +111,96 @@
 //    }
 //  }
   
-  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Unit"];
-  [request setFetchLimit:50];
-  NSError *error = nil;
-  NSArray *fetchedObjects = [_coreDataHelper.context executeFetchRequest:request
-                                                                   error:&error];
+//  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Unit"];
+//  [request setFetchLimit:50];
+//  NSError *error = nil;
+//  NSArray *fetchedObjects = [_coreDataHelper.context executeFetchRequest:request
+//                                                                   error:&error];
+//
+//  if (error) {
+//    NSLog(@"%@", [error description]);
+//  } else {
+//    for (Unit *unit in fetchedObjects) {
+//      NSLog(@"Fetched Objects = %@", [unit name]);
+//    }
+//  }
   
-  if (error) {
-    NSLog(@"%@", [error description]);
-  } else {
-    for (Unit *unit in fetchedObjects) {
-      NSLog(@"Fetched Objects = %@", [unit name]);
+//  Unit *kg = [NSEntityDescription insertNewObjectForEntityForName:@"Unit"
+//                                           inManagedObjectContext:[[self cdh] context]];
+//  Item *oranges = [NSEntityDescription insertNewObjectForEntityForName:@"Item"
+//                                                inManagedObjectContext:[[self cdh] context]];
+//  Item *bananas = [NSEntityDescription insertNewObjectForEntityForName:@"Item"
+//                                                inManagedObjectContext:[[self cdh] context]];
+//
+//  [kg setName:@"Kg"];
+//  [oranges setName:@"Oranges"];
+//  [bananas setName:@"Bananas"];
+//  [oranges setQuantity:[NSNumber numberWithInt:1]];
+//  [bananas setQuantity:[NSNumber numberWithInt:4]];
+//  [oranges setListed:[NSNumber numberWithBool:YES]];
+//  [oranges setListed:[NSNumber numberWithBool:YES]];
+//  [oranges setUnit:kg];
+//  [oranges setUnit:kg];
+//
+//  NSLog(@"Inserted %d%@ %@", [oranges quantity], [[oranges unit] name], [oranges name]);
+//  NSLog(@"Inserted %d%@ %@", [bananas quantity], [[bananas unit] name], [bananas name]);
+//  [[self cdh] saveContext];
+  
+  NSLog(@"Before deletion of the unit entity:");
+  [self showUnitAndItemCount];
+  
+  NSError *error = nil;
+  NSFetchRequest *request = [Unit fetchRequest];
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", @"Kg"];
+  [request setPredicate:predicate];
+  NSArray *kgUnit = [[[self cdh] context] executeFetchRequest:request error:&error];
+  for (Unit *unit in kgUnit) {
+    if ([unit validateForDelete:&error]) {
+      [[[self cdh] context] deleteObject:unit];
+      NSLog(@"A Kg u nit object has been deleted");
+    } else {
+      NSLog(@"Failed to delete: %@", [error localizedDescription]);
     }
+  }
+  
+  NSLog(@"After deletion of the unit enity");
+  [self showUnitAndItemCount];
+}
+
+- (void)showUnitAndItemCount {
+  NSFetchRequest *items = [Item fetchRequest];
+  NSError *itemsError = nil;
+  NSArray *fetchedItems = [[[self cdh] context] executeFetchRequest:items
+                                                              error:&itemsError];
+  
+  if (!fetchedItems && itemsError) {
+    NSLog(@"Failed to fetch items: %@", [itemsError description]);
+    return;
+  }
+  
+  NSLog(@"Found %lu items", [fetchedItems count]);
+  
+  NSFetchRequest *units = [Unit fetchRequest];
+  NSError *unitError = nil;
+  NSArray *fetchedUnits = [[[self cdh] context] executeFetchRequest:units
+                                                              error:&unitError];
+  if (!fetchedUnits && unitError) {
+    NSLog(@"Failed to fetch units: %@", [unitError description]);
+    return;
+  }
+  
+  NSLog(@"Found %lu units", [fetchedUnits count]);
+}
+
+#pragma mark - VALIDATION ERROR HANDLING
+
+- (void)showValidationError:(NSError *)error {
+  if (!error) {
+    return;
+  }
+  
+  if ([[error domain] isEqualToString:NSCocoaErrorDomain]) {
+    
   }
 }
 

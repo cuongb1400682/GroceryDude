@@ -82,29 +82,29 @@ NSString *migrationProgress = @"migrationProgress";
 
   if ([self isMigrationNecessaryForStore:[self storeURL]]) {
     [self performBackgroundManagedMigrationForStore:[self storeURL]];
+  } else {
+    NSDictionary *options = @{
+                              @"journal_mode": @"DELETE",
+                              NSMigratePersistentStoresAutomaticallyOption: @YES,
+                              NSInferMappingModelAutomaticallyOption: @YES
+                              };
+    NSError *error = nil;
+    _store = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                        configuration:nil
+                                                  URL:[self storeURL]
+                                              options:options
+                                                error:&error];
+    
+    if (!_store) {
+      //    NSLog(@"Cannot add persistent store: %@", [error description]);
+      NSLog(@"Cannot add persistent store");
+      abort();
+    } else {
+#if DEBUG
+      NSLog(@"Successfully loaded persistent store: %@", _store);
+#endif
+    }
   }
-  
-//  NSDictionary *options = @{
-//                            @"journal_mode": @"DELETE",
-//                            NSMigratePersistentStoresAutomaticallyOption: @YES,
-//                            NSInferMappingModelAutomaticallyOption: @YES
-//                            };
-//  NSError *error = nil;
-//  _store = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType
-//                                      configuration:nil
-//                                                URL:[self storeURL]
-//                                            options:options
-//                                              error:&error];
-  
-//  if (!_store) {
-////    NSLog(@"Cannot add persistent store: %@", [error description]);
-//    NSLog(@"Cannot add persistent store");
-//    abort();
-//  } else {
-//#if DEBUG
-//    NSLog(@"Successfully loaded persistent store: %@", _store);
-//#endif
-//  }
 }
 
 - (void)setupCoreData {
