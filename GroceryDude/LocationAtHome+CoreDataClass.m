@@ -1,5 +1,5 @@
 //
-//  Unit+CoreDataClass.m
+//  LocationAtHome+CoreDataClass.m
 //  GroceryDude
 //
 //  Created by Nguyễn Tấn Cường on 3/14/19.
@@ -7,9 +7,8 @@
 //
 //
 
-#import "Unit+CoreDataClass.h"
-#import "Unit+CoreDataProperties.h"
+#import "LocationAtHome+CoreDataClass.h"
 
-@implementation Unit
+@implementation LocationAtHome
 
 @end

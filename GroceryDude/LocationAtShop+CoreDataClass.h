@@ -1,18 +1,20 @@
 //
-//  Amount+CoreDataClass.h
+//  LocationAtShop+CoreDataClass.h
 //  GroceryDude
 //
-//  Created by Nguyễn Tấn Cường on 3/12/19.
+//  Created by Nguyễn Tấn Cường on 3/14/19.
 //  Copyright © 2019 Nguyễn Tấn Cường. All rights reserved.
 //
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import "LocationAtShop+CoreDataProperties.h"
+
+@class Item;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Amount : NSManagedObject
+@interface LocationAtShop : Location
 
 @end
 

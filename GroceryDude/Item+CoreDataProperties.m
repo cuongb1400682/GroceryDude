@@ -21,5 +21,7 @@
 @dynamic photoData;
 @dynamic quantity;
 @dynamic unit;
+@dynamic locationAtHome;
+@dynamic locationAtShop;
 
 @end
