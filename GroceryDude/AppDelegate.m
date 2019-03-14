@@ -11,8 +11,10 @@
 #import "Item+CoreDataClass.h"
 //#import "Measurement+CoreDataClass.h"
 //#import "Measurement+CoreDataProperties.h"
-#import "Amount+CoreDataClass.h"
-#import "Amount+CoreDataProperties.h"
+//#import "Amount+CoreDataClass.h"
+//#import "Amount+CoreDataProperties.h"
+#import "Unit+CoreDataClass.h"
+#import "Unit+CoreDataProperties.h"
 
 @implementation AppDelegate
 
@@ -93,17 +95,31 @@
 //    NSLog(@"%@", [item abc]);
 //  }
   
-  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Amount"];
+//  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Amount"];
+//  [request setFetchLimit:50];
+//  NSError *error = nil;
+//  NSArray *fetchedObjects = [_coreDataHelper.context executeFetchRequest:request
+//                                                                  error:&error];
+//
+//  if (error) {
+//    NSLog(@"%@", [error description]);
+//  } else {
+//    for (Amount *amount in fetchedObjects) {
+//      NSLog(@"Fetched Object = %@", [amount xyz]);
+//    }
+//  }
+  
+  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Unit"];
   [request setFetchLimit:50];
   NSError *error = nil;
   NSArray *fetchedObjects = [_coreDataHelper.context executeFetchRequest:request
-                                                                  error:&error];
-
+                                                                   error:&error];
+  
   if (error) {
     NSLog(@"%@", [error description]);
   } else {
-    for (Amount *amount in fetchedObjects) {
-      NSLog(@"Fetched Object = %@", [amount xyz]);
+    for (Unit *unit in fetchedObjects) {
+      NSLog(@"Fetched Objects = %@", [unit name]);
     }
   }
 }

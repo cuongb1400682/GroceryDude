@@ -21,7 +21,7 @@ NSString *migrationProgress = @"migrationProgress";
 #if DEBUG
   NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
 #endif
-  
+
   return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
 
@@ -31,8 +31,8 @@ NSString *migrationProgress = @"migrationProgress";
 #endif
   
   NSURL *storesDirectory = [[NSURL fileURLWithPath:[self applicationDocumentDirectory]] URLByAppendingPathComponent:@"Stores"];
-  
   NSFileManager *fileManager = [NSFileManager defaultManager];
+  
   if (![fileManager fileExistsAtPath:[storesDirectory path]]) {
     NSError *error = nil;
     if ([fileManager createDirectoryAtURL:storesDirectory
@@ -80,26 +80,31 @@ NSString *migrationProgress = @"migrationProgress";
     return;
   }
 
-  NSDictionary *options = @{
-                            @"journal_mode": @"DELETE",
-                            NSMigratePersistentStoresAutomaticallyOption: @YES,
-                            NSInferMappingModelAutomaticallyOption: @YES
-                            };
-  NSError *error = nil;
-  _store = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType
-                                      configuration:nil
-                                                URL:[self storeURL]
-                                            options:options
-                                              error:&error];
-  
-  if (!_store) {
-    NSLog(@"Cannot add persistent store: %@", [error description]);
-    abort();
-  } else {
-#if DEBUG
-    NSLog(@"Successfully loaded persistent store: %@", _store);
-#endif
+  if ([self isMigrationNecessaryForStore:[self storeURL]]) {
+    [self performBackgroundManagedMigrationForStore:[self storeURL]];
   }
+  
+//  NSDictionary *options = @{
+//                            @"journal_mode": @"DELETE",
+//                            NSMigratePersistentStoresAutomaticallyOption: @YES,
+//                            NSInferMappingModelAutomaticallyOption: @YES
+//                            };
+//  NSError *error = nil;
+//  _store = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType
+//                                      configuration:nil
+//                                                URL:[self storeURL]
+//                                            options:options
+//                                              error:&error];
+  
+//  if (!_store) {
+////    NSLog(@"Cannot add persistent store: %@", [error description]);
+//    NSLog(@"Cannot add persistent store");
+//    abort();
+//  } else {
+//#if DEBUG
+//    NSLog(@"Successfully loaded persistent store: %@", _store);
+//#endif
+//  }
 }
 
 - (void)setupCoreData {
@@ -172,7 +177,8 @@ NSString *migrationProgress = @"migrationProgress";
   // STEP 1 - Gather the Source, Destination and Mapping Model
   NSDictionary *sourceMetadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:NSSQLiteStoreType
                                                                                             URL:sourceStore
-                                                                                        options:nil error:&error];
+                                                                                        options:nil
+                                                                                          error:&error];
   NSManagedObjectModel *sourceModel = [NSManagedObjectModel mergedModelFromBundles:nil
                                                                   forStoreMetadata:sourceMetadata];
   NSManagedObjectModel *destinModel = _model;
@@ -262,6 +268,47 @@ NSString *migrationProgress = @"migrationProgress";
   }
   
   return YES;
+}
+
+-  (void)performBackgroundManagedMigrationForStore:(NSURL *)storeURL {
+#if DEBUG
+  NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
+#endif
+  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+  UIApplication *shareApplication = [UIApplication sharedApplication];
+  UINavigationController *navigationController = (UINavigationController *)shareApplication.keyWindow.rootViewController;
+
+  self.migrationVC = [storyboard instantiateViewControllerWithIdentifier:@"migration"];
+
+  [navigationController presentViewController:self.migrationVC
+                                     animated:NO
+                                   completion:nil];
+  
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+    if ([self migrateStore:storeURL]) {
+      dispatch_async(dispatch_get_main_queue(), ^{
+        NSError *error = nil;
+        _store = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                            configuration:nil
+                                                      URL:[self storeURL]
+                                                  options:nil
+                                                    error:&error];
+        
+        if (!_store) {
+#if DEBUG
+          NSLog(@"Failed to add persistent store: %@", [error description]);
+#endif
+          abort();
+        }
+        
+        NSLog(@"Succeeded to add persistent store");
+        
+        [self.migrationVC dismissViewControllerAnimated:YES
+                                             completion:nil];
+        _migrationVC = nil;
+      });
+    }
+  });
 }
 
 @end
