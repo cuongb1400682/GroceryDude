@@ -88,6 +88,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB0724D5223B5A8900CB463B /* CoreDataTVC */ = {
+			isa = PBXGroup;
+			children = (
+				CB8459AC223A567200E759AE /* CoreDataTVC.h */,
+				CB8459AD223A567200E759AE /* CoreDataTVC.m */,
+			);
+			name = CoreDataTVC;
+			sourceTree = "<group>";
+		};
+		CB0724D6223B5A9F00CB463B /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				CBA449992234A23A0041ACA7 /* AppDelegate.h */,
+				CBA4499A2234A23A0041ACA7 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		CB0724D7223B5AA600CB463B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CBA4499C2234A23A0041ACA7 /* ViewController.h */,
+				CBA4499D2234A23A0041ACA7 /* ViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		CB0724D8223B5AB100CB463B /* MigrationVC */ = {
+			isa = PBXGroup;
+			children = (
+				CB850387223749CD005884C1 /* MigrationVC.h */,
+				CB850388223749CD005884C1 /* MigrationVC.m */,
+			);
+			name = MigrationVC;
+			sourceTree = "<group>";
+		};
 		CB381D0F2234A64500D16E87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,14 +156,10 @@
 		CB381D192234EBBF00D16E87 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CBA449992234A23A0041ACA7 /* AppDelegate.h */,
-				CBA4499A2234A23A0041ACA7 /* AppDelegate.m */,
-				CBA4499C2234A23A0041ACA7 /* ViewController.h */,
-				CBA4499D2234A23A0041ACA7 /* ViewController.m */,
-				CB850387223749CD005884C1 /* MigrationVC.h */,
-				CB850388223749CD005884C1 /* MigrationVC.m */,
-				CB8459AC223A567200E759AE /* CoreDataTVC.h */,
-				CB8459AD223A567200E759AE /* CoreDataTVC.m */,
+				CB0724D6223B5A9F00CB463B /* AppDelegate */,
+				CB0724D7223B5AA600CB463B /* ViewController */,
+				CB0724D8223B5AB100CB463B /* MigrationVC */,
+				CB0724D5223B5A8900CB463B /* CoreDataTVC */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -156,6 +188,7 @@
 				CB0B6BF8223A0DE8000675DB /* Unit+CoreDataClass.m */,
 				CB0B6BF9223A0DE8000675DB /* Unit+CoreDataProperties.m */,
 				CB381D1E2234F48C00D16E87 /* Model.xcdatamodeld */,
+				CB381D172234E87600D16E87 /* Core Data Helper */,
 			);
 			name = "Data Models";
 			sourceTree = "<group>";
@@ -182,7 +215,6 @@
 			children = (
 				CB381D1A2234EBCB00D16E87 /* Data Models */,
 				CB381D192234EBBF00D16E87 /* Controllers */,
-				CB381D172234E87600D16E87 /* Core Data Helper */,
 				CB381D182234EB9B00D16E87 /* Supporting Files */,
 			);
 			path = GroceryDude;

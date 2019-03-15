@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GrV-vc-bg1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NxA-Yk-9KN">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -52,7 +52,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jtv-ba-r5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="536.231884057971" y="148.66071428571428"/>
+            <point key="canvasLocation" x="581" y="149"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="mU0-ao-kEO">
+            <objects>
+                <tabBarController id="NxA-Yk-9KN" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cgt-xh-Aj4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="GrV-vc-bg1" kind="relationship" relationship="viewControllers" id="QEc-Uc-bt3"/>
+                        <segue destination="rRJ-Jq-dLj" kind="relationship" relationship="viewControllers" id="zPh-GI-TRO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NzU-TS-SjH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1704" y="478"/>
         </scene>
         <!--Item-->
         <scene sceneID="MSN-ba-xSU">
@@ -67,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WqB-eJ-rUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1442" y="149"/>
+            <point key="canvasLocation" x="1483" y="149"/>
         </scene>
         <!--MigrationVC-->
         <scene sceneID="FZC-Cl-LZU">
@@ -113,10 +131,11 @@
             </objects>
             <point key="canvasLocation" x="-375.36231884057975" y="-556.47321428571422"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Prepare-->
         <scene sceneID="6cG-jz-JMU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GrV-vc-bg1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Prepare" image="prepare" id="86N-Is-Oje"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9ck-qO-6J8">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -131,5 +150,57 @@
             </objects>
             <point key="canvasLocation" x="-375.36231884057975" y="148.66071428571428"/>
         </scene>
+        <!--Grocery Dude-->
+        <scene sceneID="t6W-xu-vzB">
+            <objects>
+                <tableViewController id="qY0-Pb-n3T" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3yI-gg-47A">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShopCell" id="jhM-n0-guF">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jhM-n0-guF" id="iwh-CZ-dlj">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qY0-Pb-n3T" id="rjK-7v-1GB"/>
+                            <outlet property="delegate" destination="qY0-Pb-n3T" id="cEj-eJ-IrP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Grocery Dude" id="9FH-d7-PQd"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nsf-u0-pj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="580" y="878"/>
+        </scene>
+        <!--Shop-->
+        <scene sceneID="Ldn-Ap-UvP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rRJ-Jq-dLj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Shop" image="shop" id="3l9-os-Xtn"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gDG-fI-8E0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qY0-Pb-n3T" kind="relationship" relationship="rootViewController" id="siK-8e-u86"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Y8-bm-2Ca" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-375" y="878"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="prepare" width="28" height="22"/>
+        <image name="shop" width="30" height="25"/>
+    </resources>
 </document>
