@@ -15,6 +15,8 @@
 //#import "Amount+CoreDataProperties.h"
 #import "Unit+CoreDataClass.h"
 #import "Unit+CoreDataProperties.h"
+#import "LocationAtHome+CoreDataProperties.h"
+#import "LocationAtShop+CoreDataProperties.h"
 
 @implementation AppDelegate
 
@@ -32,7 +34,7 @@
 #endif
   
   [self cdh];
-  [self demo];
+//  [self demo];
 }
 
 - (CoreDataHelper *)cdh {
@@ -41,7 +43,10 @@
 #endif
 
   if (!_coreDataHelper) {
-    _coreDataHelper = [CoreDataHelper new];
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+      self->_coreDataHelper = [CoreDataHelper new];
+    });
     [_coreDataHelper setupCoreData];
   }
   
@@ -52,119 +57,30 @@
 #if DEBUG
   NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
 #endif
-
-  NSArray *newItemNames = [NSArray arrayWithObjects:@"Orange", @"Apple", @"Kiwi", @"Banana", @"Teapot", @"Toothbrush", @"Sticker", @"Magnet", @"Glue", nil];
-
-  for (NSString *itemName in newItemNames) {
-    Item *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"Item"
-                                                  inManagedObjectContext:_coreDataHelper.context];
-    newItem.name = itemName;
-    NSLog(@"Inserted new item for: %@", newItem.name);
+  CoreDataHelper *cdh = [self cdh];
+  NSArray *homeLocations = [NSArray arrayWithObjects:
+                            @"Fruit Bowl",@"Pantry",@"Nursery",@"Bathroom",@"Fridge",nil]; NSArray *shopLocations = [NSArray arrayWithObjects: @"Produce",@"Aisle 1",@"Aisle 2",@"Aisle 3", @"Deli",nil]; NSArray *unitNames = [NSArray arrayWithObjects: @"g",@"pkt",@"box",@"ml",@"kg",nil];
+  NSArray *itemNames = [NSArray arrayWithObjects: @"Grapes",@"Biscuits",@"Nappies",@"Shampoo",@"Sausages",nil];
+  int i = 0;
+  for (NSString *itemName in itemNames) {
+    LocationAtHome *locationAtHome = [NSEntityDescription
+                                      insertNewObjectForEntityForName:@"LocationAtHome"
+                                      inManagedObjectContext:cdh.context]; LocationAtShop *locationAtShop =
+    [NSEntityDescription insertNewObjectForEntityForName:@"LocationAtShop"
+                                  inManagedObjectContext:cdh.context];
+    Unit *unit = [NSEntityDescription insertNewObjectForEntityForName:@"Unit"
+                                               inManagedObjectContext:cdh.context];
+    Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item"
+                                               inManagedObjectContext:cdh.context];
+    locationAtHome.storedIn = [homeLocations objectAtIndex:i];
+    locationAtShop.aisle = [shopLocations objectAtIndex:i];
+    unit.name = [unitNames objectAtIndex:i];
+    item.name = [itemNames objectAtIndex:i];
+    item.locationAtHome = locationAtHome; item.locationAtShop = locationAtShop; item.unit = unit;
+    i++;
   }
+  [cdh saveContext];
   
-  [[self cdh] saveContext];
-  
-//  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
-//  [request setPredicate:[NSPredicate predicateWithFormat:@"%K CONTAINS[cd] %@", @"name", @"a"]];
-  
-//  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"
-//                                                                 ascending:NO];
-  
-//  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name != %@", @"Teapot"];
-  
-//  [request setPredicate:predicate];
-//  [request setSortDescriptors:@[sortDescriptor]];
-  
-//  NSArray *result = [[self.coreDataHelper context] executeFetchRequest:request
-//                                                                 error:nil];
-//
-//  for (Item *item in result) {
-//    NSLog(@"Fetch Object = %@", [item name]);
-//  }
-  
-//  for (int i = 0; i < 50; i++) {
-//    Measurement *newMeasurement = [NSEntityDescription insertNewObjectForEntityForName:@"Measurement"
-//                                                                inManagedObjectContext:_coreDataHelper.context];
-//
-//    newMeasurement.abc = [NSString stringWithFormat:@"--->> LOST OF TEST DATA x%i", i];
-//  }
-//  [_coreDataHelper saveContext];
-//
-//  NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"Measurement"];
-//
-//  NSArray *result = [_coreDataHelper.context executeFetchRequest:request error:nil];
-//  for (Measurement *item in result) {
-//    NSLog(@"%@", [item abc]);
-//  }
-  
-//  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Amount"];
-//  [request setFetchLimit:50];
-//  NSError *error = nil;
-//  NSArray *fetchedObjects = [_coreDataHelper.context executeFetchRequest:request
-//                                                                  error:&error];
-//
-//  if (error) {
-//    NSLog(@"%@", [error description]);
-//  } else {
-//    for (Amount *amount in fetchedObjects) {
-//      NSLog(@"Fetched Object = %@", [amount xyz]);
-//    }
-//  }
-  
-//  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Unit"];
-//  [request setFetchLimit:50];
-//  NSError *error = nil;
-//  NSArray *fetchedObjects = [_coreDataHelper.context executeFetchRequest:request
-//                                                                   error:&error];
-//
-//  if (error) {
-//    NSLog(@"%@", [error description]);
-//  } else {
-//    for (Unit *unit in fetchedObjects) {
-//      NSLog(@"Fetched Objects = %@", [unit name]);
-//    }
-//  }
-  
-//  Unit *kg = [NSEntityDescription insertNewObjectForEntityForName:@"Unit"
-//                                           inManagedObjectContext:[[self cdh] context]];
-//  Item *oranges = [NSEntityDescription insertNewObjectForEntityForName:@"Item"
-//                                                inManagedObjectContext:[[self cdh] context]];
-//  Item *bananas = [NSEntityDescription insertNewObjectForEntityForName:@"Item"
-//                                                inManagedObjectContext:[[self cdh] context]];
-//
-//  [kg setName:@"Kg"];
-//  [oranges setName:@"Oranges"];
-//  [bananas setName:@"Bananas"];
-//  [oranges setQuantity:[NSNumber numberWithInt:1]];
-//  [bananas setQuantity:[NSNumber numberWithInt:4]];
-//  [oranges setListed:[NSNumber numberWithBool:YES]];
-//  [oranges setListed:[NSNumber numberWithBool:YES]];
-//  [oranges setUnit:kg];
-//  [oranges setUnit:kg];
-//
-//  NSLog(@"Inserted %d%@ %@", [oranges quantity], [[oranges unit] name], [oranges name]);
-//  NSLog(@"Inserted %d%@ %@", [bananas quantity], [[bananas unit] name], [bananas name]);
-//  [[self cdh] saveContext];
-  
-//  NSLog(@"Before deletion of the unit entity:");
-//  [self showUnitAndItemCount];
-//
-//  NSError *error = nil;
-//  NSFetchRequest *request = [Unit fetchRequest];
-//  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", @"Kg"];
-//  [request setPredicate:predicate];
-//  NSArray *kgUnit = [[[self cdh] context] executeFetchRequest:request error:&error];
-//  for (Unit *unit in kgUnit) {
-//    if ([unit validateForDelete:&error]) {
-//      [[[self cdh] context] deleteObject:unit];
-//      NSLog(@"A Kg u nit object has been deleted");
-//    } else {
-//      NSLog(@"Failed to delete: %@", [error localizedDescription]);
-//    }
-//  }
-//
-//  NSLog(@"After deletion of the unit enity");
-//  [self showUnitAndItemCount];
 }
 
 - (void)showUnitAndItemCount {
@@ -200,7 +116,7 @@
   }
   
   if ([[error domain] isEqualToString:NSCocoaErrorDomain]) {
-    
+    // Skip this
   }
 }
 

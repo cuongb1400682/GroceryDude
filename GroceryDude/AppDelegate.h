@@ -17,5 +17,7 @@
 
 @property (nonatomic, strong, readonly) CoreDataHelper *coreDataHelper;
 
+- (CoreDataHelper *)cdh;
+
 @end
 

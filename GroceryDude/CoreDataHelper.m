@@ -288,13 +288,13 @@ NSString *migrationProgress = @"migrationProgress";
     if ([self migrateStore:storeURL]) {
       dispatch_async(dispatch_get_main_queue(), ^{
         NSError *error = nil;
-        _store = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType
-                                            configuration:nil
-                                                      URL:[self storeURL]
-                                                  options:nil
-                                                    error:&error];
+        self->_store = [self->_coordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                        configuration:nil
+                                                                  URL:[self storeURL]
+                                                              options:nil
+                                                                error:&error];
         
-        if (!_store) {
+        if (!self->_store) {
 #if DEBUG
           NSLog(@"Failed to add persistent store: %@", [error description]);
 #endif
@@ -305,7 +305,7 @@ NSString *migrationProgress = @"migrationProgress";
         
         [self.migrationVC dismissViewControllerAnimated:YES
                                              completion:nil];
-        _migrationVC = nil;
+        self->_migrationVC = nil;
       });
     }
   });

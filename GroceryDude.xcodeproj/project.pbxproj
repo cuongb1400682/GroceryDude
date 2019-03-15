@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB0724DC223B61AD00CB463B /* PrepareTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0724DB223B61AD00CB463B /* PrepareTVC.m */; };
 		CB0B6BFA223A0DE8000675DB /* Unit+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0B6BF8223A0DE8000675DB /* Unit+CoreDataClass.m */; };
 		CB0B6BFB223A0DE8000675DB /* Unit+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0B6BF9223A0DE8000675DB /* Unit+CoreDataProperties.m */; };
 		CB381D112234A64500D16E87 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB381D102234A64500D16E87 /* CoreData.framework */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB0724DA223B61AD00CB463B /* PrepareTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrepareTVC.h; sourceTree = "<group>"; };
+		CB0724DB223B61AD00CB463B /* PrepareTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrepareTVC.m; sourceTree = "<group>"; };
 		CB0B6BF1223A0C91000675DB /* GroceryDude 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 4.xcdatamodel"; sourceTree = "<group>"; };
 		CB0B6BF6223A0DE8000675DB /* Unit+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit+CoreDataProperties.h"; sourceTree = "<group>"; };
 		CB0B6BF7223A0DE8000675DB /* Unit+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit+CoreDataClass.h"; sourceTree = "<group>"; };
@@ -124,6 +127,15 @@
 			name = MigrationVC;
 			sourceTree = "<group>";
 		};
+		CB0724D9223B604B00CB463B /* PrepareTVC */ = {
+			isa = PBXGroup;
+			children = (
+				CB0724DA223B61AD00CB463B /* PrepareTVC.h */,
+				CB0724DB223B61AD00CB463B /* PrepareTVC.m */,
+			);
+			name = PrepareTVC;
+			sourceTree = "<group>";
+		};
 		CB381D0F2234A64500D16E87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +172,7 @@
 				CB0724D7223B5AA600CB463B /* ViewController */,
 				CB0724D8223B5AB100CB463B /* MigrationVC */,
 				CB0724D5223B5A8900CB463B /* CoreDataTVC */,
+				CB0724D9223B604B00CB463B /* PrepareTVC */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -299,6 +312,7 @@
 				CBA4499E2234A23A0041ACA7 /* ViewController.m in Sources */,
 				CB0B6BFB223A0DE8000675DB /* Unit+CoreDataProperties.m in Sources */,
 				CBA449AC2234A23B0041ACA7 /* main.m in Sources */,
+				CB0724DC223B61AD00CB463B /* PrepareTVC.m in Sources */,
 				CB850389223749CD005884C1 /* MigrationVC.m in Sources */,
 				CB0B6BFA223A0DE8000675DB /* Unit+CoreDataClass.m in Sources */,
 				CB7B00762235F0EF004ED213 /* Measurement+CoreDataProperties.m in Sources */,

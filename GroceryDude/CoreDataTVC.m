@@ -88,7 +88,7 @@
 #if DEBUG
   NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
 #endif
-  
+
   [self.tableView endUpdates];
 }
 
