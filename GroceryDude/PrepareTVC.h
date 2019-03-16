@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PrepareTVC : CoreDataTVC <UIViewControllerTransitioningDelegate>
 
-@property (strong, nonatomic) UIAlertController *clearConfirmActionSheet;
+@property (strong, nonatomic) UIAlertController *clearConfirmAlertVC;
 
 @end
 

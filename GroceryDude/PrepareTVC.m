@@ -39,7 +39,7 @@ static NSString * const cellIdentifier = @"ItemCell";
   [super viewDidLoad];
   [self configureFetch];
   [self performFetch];
-  [self.clearConfirmActionSheet setTransitioningDelegate:self];
+  [self.clearConfirmAlertVC setTransitioningDelegate:self];
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(performFetch)
                                                name:@"SomethingChanged"
@@ -51,7 +51,6 @@ static NSString * const cellIdentifier = @"ItemCell";
 #if DEBUG
   NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
 #endif
-  
   Item *item = [self.frc objectAtIndexPath:indexPath];
 
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier
@@ -76,6 +75,39 @@ static NSString * const cellIdentifier = @"ItemCell";
   return cell;
 }
 
+- (void)tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath {
+#if DEBUG
+  NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
+#endif
+  if (editingStyle == UITableViewCellEditingStyleDelete) {
+    Item *deleteTarget = [self.frc objectAtIndexPath:indexPath];
+    [self.frc.managedObjectContext deleteObject:deleteTarget];
+
+//    [tableView deleteRowsAtIndexPaths:@[indexPath]
+//                     withRowAnimation:UITableViewRowAnimationFade];
+  }
+}
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+#if DEBUG
+  NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
+#endif
+  NSManagedObjectID *objectID = [[self.frc objectAtIndexPath:indexPath] objectID];
+  Item *item = (Item *)[self.frc.managedObjectContext existingObjectWithID:objectID
+                                                                     error:nil];
+  
+  if ([item listed]) {
+    [item setListed:![item listed]];
+    [item setCollected:NO];
+  }
+  
+  [self.tableView reloadRowsAtIndexPaths:@[indexPath]
+                        withRowAnimation:UITableViewRowAnimationNone];
+}
+
 - (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
 #if DEBUG
   NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
@@ -84,6 +116,54 @@ static NSString * const cellIdentifier = @"ItemCell";
   return nil;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+  return [[[[self frc] sections] objectAtIndex:section] numberOfObjects];
+}
+
 #pragma mark - INTERACTION
+
+- (IBAction)clear:(id)sender {
+  CoreDataHelper *cdh = [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+  NSFetchRequest *request = [[cdh model] fetchRequestTemplateForName:@"ShoppingList"];
+  NSArray *shoppingList = [[cdh context] executeFetchRequest:request
+                                                       error:nil];
+  
+  if ([shoppingList count] > 0) {
+    _clearConfirmAlertVC = [UIAlertController alertControllerWithTitle:@"Clear the Entire Shopping List?"
+                                                                   message:@"Press \"Cancel\" to close this."
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *actionClear = [UIAlertAction actionWithTitle:@"Clear All"
+                                                          style:UIAlertActionStyleDestructive
+                                                        handler:^(UIAlertAction * _Nonnull action) {
+                                                          [self actionClearSelected:action];
+                                                        }];
+    UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+    [_clearConfirmAlertVC addAction:actionClear];
+    [_clearConfirmAlertVC addAction:actionCancel];
+  } else {
+    _clearConfirmAlertVC = [UIAlertController alertControllerWithTitle:@"Nothing to be cleared"
+                                                               message:@"Please click (+) button to add item."
+                                                        preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *actionClose = [UIAlertAction actionWithTitle:@"Close"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+    [_clearConfirmAlertVC addAction:actionClose];
+  }
+  
+  [self presentViewController:_clearConfirmAlertVC animated:YES completion:nil];
+}
+
+- (void)actionClearSelected:(UIAlertAction *)action {
+  CoreDataHelper *cdh = [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+  NSFetchRequest *request = [[cdh model] fetchRequestTemplateForName:@"ShoppingList"];
+  NSArray *shoppingItems = [[cdh context] executeFetchRequest:request error:nil];
+  
+  for (Item *item in shoppingItems) {
+    [item setListed:NO];
+  }
+}
 
 @end
