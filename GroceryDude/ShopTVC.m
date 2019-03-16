@@ -86,10 +86,60 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                           withRowAnimation:UITableViewRowAnimationNone];
 }
 
-- (void)tableView:(UITableView *)tableView
-commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
-forRowAtIndexPath:(NSIndexPath *)indexPath {
+#pragma mark - INTERACTION
+
+- (IBAction)clear:(id)sender {
+#if DEBUG
+  NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
+#endif
+  UIAlertController *alertController = nil;
   
+  if ([[[self frc] fetchedObjects] count] == 0) {
+    alertController = [UIAlertController alertControllerWithTitle:@"No item to be cleared"
+                                                          message:@"Add items by using prepare tab"
+                                                   preferredStyle:UIAlertControllerStyleAlert];
+    [self presentViewController:alertController animated:YES completion:nil];
+  }
+  
+  BOOL nothingToBeCleared = YES;
+  for (Item *item in [[self frc] fetchedObjects]) {
+    if ([item collected]) {
+      [item setCollected:NO];
+      [item setListed:NO];
+      nothingToBeCleared = NO;
+    }
+  }
+  
+  if (nothingToBeCleared) {
+    alertController = [UIAlertController alertControllerWithTitle:@"Select items to delete before pressing clear"
+                                                          message:@""
+                                                   preferredStyle:UIAlertControllerStyleAlert];
+    [self presentViewController:alertController animated:YES completion:nil];
+  }
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

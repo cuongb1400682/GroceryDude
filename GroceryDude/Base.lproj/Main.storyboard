@@ -178,7 +178,13 @@
                             <outlet property="delegate" destination="qY0-Pb-n3T" id="cEj-eJ-IrP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Grocery Dude" id="9FH-d7-PQd"/>
+                    <navigationItem key="navigationItem" title="Grocery Dude" id="9FH-d7-PQd">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="6Le-H9-AKt">
+                            <connections>
+                                <action selector="clear:" destination="qY0-Pb-n3T" id="LIo-9e-gxX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nsf-u0-pj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
