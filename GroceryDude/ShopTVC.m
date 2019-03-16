@@ -1,6 +1,7 @@
+#import "AppDelegate.h"
 #import "ShopTVC.h"
 #import "Item+CoreDataProperties.h"
-#import "AppDelegate.h"
+#import "ItemVC.h"
 
 @implementation ShopTVC
 
@@ -98,7 +99,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     alertController = [UIAlertController alertControllerWithTitle:@"No item to be cleared"
                                                           message:@"Add items by using prepare tab"
                                                    preferredStyle:UIAlertControllerStyleAlert];
-    [self presentViewController:alertController animated:YES completion:nil];
+    [self presentViewController:alertController
+                       animated:YES
+                     completion:nil];
   }
   
   BOOL nothingToBeCleared = YES;
@@ -114,32 +117,24 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     alertController = [UIAlertController alertControllerWithTitle:@"Select items to delete before pressing clear"
                                                           message:@""
                                                    preferredStyle:UIAlertControllerStyleAlert];
-    [self presentViewController:alertController animated:YES completion:nil];
+    [self presentViewController:alertController
+                       animated:YES
+                     completion:nil];
   }
 }
 
+#pragma mark - SEGUE
+
+- (void)tableView:(UITableView *)tableView
+accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+#if DEBUG
+  NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
+#endif
+  ItemVC *itemVC = [[self storyboard] instantiateViewControllerWithIdentifier:@"ItemVC"];
+  Item *selectedItem = [[self frc] objectAtIndexPath:indexPath];
+  [itemVC setSelectedItemID:[selectedItem objectID]];
+  [[self navigationController] pushViewController:itemVC
+                                         animated:TRUE];
+}
+
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

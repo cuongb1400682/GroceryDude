@@ -1,7 +1,8 @@
+#import "AppDelegate.h"
 #import "PrepareTVC.h"
 #import "CoreDataHelper.h"
 #import "Unit+CoreDataProperties.h"
-#import "AppDelegate.h"
+#import "ItemVC.h"
 
 @implementation PrepareTVC
 
@@ -57,7 +58,10 @@ static NSString * const cellIdentifier = @"ItemCell";
                                                           forIndexPath:indexPath];
   [cell setAccessoryType:UITableViewCellAccessoryDetailButton];
   
-  NSMutableString *title = [NSMutableString stringWithFormat:@"%d%@ %@", [item quantity], [[item unit] name], [item name]];
+  NSMutableString *title = [NSMutableString stringWithFormat:@"%d%@ %@",
+                            [item quantity],
+                            [[item unit] name],
+                            [item name]];
   [title replaceOccurrencesOfString:@"(null)"
                          withString:@""
                             options:0
@@ -65,10 +69,12 @@ static NSString * const cellIdentifier = @"ItemCell";
   [[cell textLabel] setText:title];
   
   if ([item listed]) {
-    [[cell textLabel] setFont:[UIFont fontWithName:@"Helvetica Neue" size:18]];
+    [[cell textLabel] setFont:[UIFont fontWithName:@"Helvetica Neue"
+                                              size:18]];
     [[cell textLabel] setTextColor:[UIColor orangeColor]];
   } else {
-    [[cell textLabel] setFont:[UIFont fontWithName:@"Helvetica Neue" size:16]];
+    [[cell textLabel] setFont:[UIFont fontWithName:@"Helvetica Neue"
+                                              size:16]];
     [[cell textLabel] setTextColor:[UIColor grayColor]];
   }
   
@@ -163,6 +169,36 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   for (Item *item in shoppingItems) {
     [item setListed:NO];
   }
+}
+
+#pragma mark - SEGUE
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender {
+#if DEBUG
+  NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
+#endif
+  if ([[segue identifier] isEqualToString:@"Add Item Segue"]) {
+    ItemVC *itemVC = [segue destinationViewController];
+    CoreDataHelper *cdh = [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+    Item *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"Item"
+                                                  inManagedObjectContext:[cdh context]];
+    [[cdh context] obtainPermanentIDsForObjects:@[newItem]
+                                          error:nil];
+    [itemVC setSelectedItemID:[newItem objectID]];
+  }
+}
+
+- (void)tableView:(UITableView *)tableView
+accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+#if DEBUG
+  NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
+#endif
+  ItemVC *itemVC = [[self storyboard] instantiateViewControllerWithIdentifier:@"ItemVC"];
+  Item *selectedItem = [[self frc] objectAtIndexPath:indexPath];
+  [itemVC setSelectedItemID:[selectedItem objectID]];
+  [[self navigationController] pushViewController:itemVC
+                                         animated:TRUE];
 }
 
 @end

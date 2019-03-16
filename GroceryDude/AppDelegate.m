@@ -32,9 +32,8 @@
 #if DEBUG
   NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
 #endif
-  
   [self cdh];
-//  [self demo];
+  //[self demo];
 }
 
 - (CoreDataHelper *)cdh {
