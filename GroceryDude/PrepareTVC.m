@@ -84,9 +84,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
   if (editingStyle == UITableViewCellEditingStyleDelete) {
     Item *deleteTarget = [self.frc objectAtIndexPath:indexPath];
     [self.frc.managedObjectContext deleteObject:deleteTarget];
-
-//    [tableView deleteRowsAtIndexPaths:@[indexPath]
-//                     withRowAnimation:UITableViewRowAnimationFade];
+    [tableView deleteRowsAtIndexPaths:@[indexPath]
+                     withRowAnimation:UITableViewRowAnimationFade];
   }
 }
 
