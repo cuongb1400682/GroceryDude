@@ -1,4 +1,6 @@
 #import "ItemVC.h"
+#import "LocationAtHome+CoreDataProperties.h"
+#import "LocationAtShop+CoreDataProperties.h"
 
 @implementation ItemVC
 
@@ -66,6 +68,8 @@
   NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
 #endif
   [super viewWillAppear:animated];
+  [self ensureItemHomeLocationIsNotNull];
+  [self ensureItemShopLocationIsNotNull];
   [self refreshInterface];
   
   if ([[[self nameTextField] text] isEqualToString:@"New Item"]) {
@@ -78,8 +82,86 @@
 #if DEBUG
   NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
 #endif
+  [self ensureItemHomeLocationIsNotNull];
+  [self ensureItemShopLocationIsNotNull];
   CoreDataHelper *cdh = [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
   [cdh saveContext];
+}
+
+#pragma mark - DATA
+
+- (void)ensureItemHomeLocationIsNotNull {
+#if DEBUG
+  NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
+#endif
+  if (![self selectedItemID]) {
+    return;
+  }
+  
+  CoreDataHelper *cdh = [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+  Item *selectedItem = [[cdh context] existingObjectWithID:_selectedItemID error:nil];
+  
+  if (![selectedItem locationAtHome]) {
+    return;
+  }
+  
+  NSFetchRequest *request = [[cdh model] fetchRequestTemplateForName:@"UnknownLocationAtHome"];
+  NSArray *homeLocations = [[cdh context] executeFetchRequest:request error:nil];
+  
+  if ([homeLocations count] > 0) {
+    [selectedItem setLocationAtHome:[homeLocations objectAtIndex:0]];
+  } else {
+    LocationAtHome *location = [NSEntityDescription insertNewObjectForEntityForName:@"LocationAtHome"
+                                                             inManagedObjectContext:[cdh context]];
+    [location setStoredIn:@"..Unknown Location.."];
+    
+    if ([[cdh context] obtainPermanentIDsForObjects:@[location] error:nil]) {
+      [selectedItem setLocationAtHome:location];
+    } else {
+#if DEBUG
+      NSLog(@"Cannnot obtain permanent ids for "
+            "new LocationAtHome with storedIn of UnknownLocation: %@",
+            [location description]);
+#endif
+    }
+  }
+}
+
+- (void)ensureItemShopLocationIsNotNull {
+#if DEBUG
+  NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
+#endif
+  if (![self selectedItemID]) {
+    return;
+  }
+  
+  CoreDataHelper *cdh = [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+  Item *selectedItem = [[cdh context] existingObjectWithID:_selectedItemID error:nil];
+  
+  if ([selectedItem locationAtShop]) {
+    return;
+  }
+  
+  NSFetchRequest *request = [[cdh model] fetchRequestTemplateForName:@"UnknownLocationAtShop"];
+  NSArray *shopLocations = [[cdh context] executeFetchRequest:request error:nil];
+  
+  if ([shopLocations count] > 0) {
+    [selectedItem setLocationAtShop:[shopLocations objectAtIndex:0]];
+  } else {
+    LocationAtShop *location = [NSEntityDescription insertNewObjectForEntityForName:@"LocationAtShop"
+                                                             inManagedObjectContext:[cdh context]];
+    [location setAisle:@"..Unknown Location.."];
+    
+    if ([[cdh context] obtainPermanentIDsForObjects:@[location] error:nil]) {
+      [selectedItem setLocationAtShop:location];
+    } else {
+#if DEBUG
+      NSLog(@"Cannnot obtain permanent ids for "
+            "new LocationAtHome with aisle of UnkownLocation: %@",
+            [location description]);
+#endif
+    }
+  }
 }
 
 @end
