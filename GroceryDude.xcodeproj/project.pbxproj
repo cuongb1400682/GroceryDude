@@ -10,6 +10,7 @@
 		CB0724DC223B61AD00CB463B /* PrepareTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0724DB223B61AD00CB463B /* PrepareTVC.m */; };
 		CB0B6BFA223A0DE8000675DB /* Unit+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0B6BF8223A0DE8000675DB /* Unit+CoreDataClass.m */; };
 		CB0B6BFB223A0DE8000675DB /* Unit+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0B6BF9223A0DE8000675DB /* Unit+CoreDataProperties.m */; };
+		CB30B46F223F2E3F00CF4592 /* UnitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB30B46E223F2E3F00CF4592 /* UnitVC.m */; };
 		CB381D112234A64500D16E87 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB381D102234A64500D16E87 /* CoreData.framework */; };
 		CB381D162234A6AE00D16E87 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB381D152234A6AE00D16E87 /* CoreDataHelper.m */; };
 		CB381D202234F48C00D16E87 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB381D1E2234F48C00D16E87 /* Model.xcdatamodeld */; };
@@ -42,6 +43,8 @@
 		CB0B6BF7223A0DE8000675DB /* Unit+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit+CoreDataClass.h"; sourceTree = "<group>"; };
 		CB0B6BF8223A0DE8000675DB /* Unit+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Unit+CoreDataClass.m"; sourceTree = "<group>"; };
 		CB0B6BF9223A0DE8000675DB /* Unit+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Unit+CoreDataProperties.m"; sourceTree = "<group>"; };
+		CB30B46D223F2E3F00CF4592 /* UnitVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitVC.h; sourceTree = "<group>"; };
+		CB30B46E223F2E3F00CF4592 /* UnitVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitVC.m; sourceTree = "<group>"; };
 		CB381D102234A64500D16E87 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CB381D142234A6AE00D16E87 /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		CB381D152234A6AE00D16E87 /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
@@ -145,6 +148,15 @@
 			name = PrepareTVC;
 			sourceTree = "<group>";
 		};
+		CB30B46C223F2C2D00CF4592 /* UnitVC */ = {
+			isa = PBXGroup;
+			children = (
+				CB30B46D223F2E3F00CF4592 /* UnitVC.h */,
+				CB30B46E223F2E3F00CF4592 /* UnitVC.m */,
+			);
+			name = UnitVC;
+			sourceTree = "<group>";
+		};
 		CB381D0F2234A64500D16E87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +189,7 @@
 		CB381D192234EBBF00D16E87 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CB30B46C223F2C2D00CF4592 /* UnitVC */,
 				CBB0D380223E5E1C003FE8E4 /* UnitsTVC */,
 				CBB0D37C223CFC76003FE8E4 /* ItemVC */,
 				CB0724D6223B5A9F00CB463B /* AppDelegate */,
@@ -344,6 +357,7 @@
 			files = (
 				CB7B00752235F0EF004ED213 /* Measurement+CoreDataClass.m in Sources */,
 				CB381D302234F90000D16E87 /* Item+CoreDataProperties.m in Sources */,
+				CB30B46F223F2E3F00CF4592 /* UnitVC.m in Sources */,
 				CB8459AA223A4FB900E759AE /* Unit+CoreDataProperties.m in Sources */,
 				CB381D312234F90000D16E87 /* Item+CoreDataClass.m in Sources */,
 				CB85038322374364005884C1 /* Amount+CoreDataClass.m in Sources */,

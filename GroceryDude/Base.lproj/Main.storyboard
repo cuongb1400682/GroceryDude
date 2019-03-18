@@ -503,7 +503,7 @@
         <!--Unit-->
         <scene sceneID="CyI-nL-ztF">
             <objects>
-                <viewController id="6DX-Pl-Fl5" sceneMemberID="viewController">
+                <viewController id="6DX-Pl-Fl5" customClass="UnitVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tAR-Ei-ROf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -544,9 +544,16 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Unit" id="wU0-Hc-IBp">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="eee-rQ-hE8"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="eee-rQ-hE8">
+                            <connections>
+                                <action selector="done:" destination="6DX-Pl-Fl5" id="QaC-1q-ukP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="IRB-kL-JI1" id="jPN-PT-sPX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7A-LP-EfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
