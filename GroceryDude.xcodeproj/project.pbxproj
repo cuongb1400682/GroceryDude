@@ -31,6 +31,7 @@
 		CBA449AC2234A23B0041ACA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA449AB2234A23B0041ACA7 /* main.m */; };
 		CBB0D37B223C8706003FE8E4 /* ShopTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB0D37A223C8706003FE8E4 /* ShopTVC.m */; };
 		CBB0D37F223CFC8F003FE8E4 /* ItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB0D37E223CFC8F003FE8E4 /* ItemVC.m */; };
+		CBB0D383223E794E003FE8E4 /* UnitsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB0D382223E794E003FE8E4 /* UnitsTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,8 @@
 		CBB0D37A223C8706003FE8E4 /* ShopTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopTVC.m; sourceTree = "<group>"; };
 		CBB0D37D223CFC8F003FE8E4 /* ItemVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemVC.h; sourceTree = "<group>"; };
 		CBB0D37E223CFC8F003FE8E4 /* ItemVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemVC.m; sourceTree = "<group>"; };
+		CBB0D381223E794E003FE8E4 /* UnitsTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitsTVC.h; sourceTree = "<group>"; };
+		CBB0D382223E794E003FE8E4 /* UnitsTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitsTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +177,7 @@
 		CB381D192234EBBF00D16E87 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CBB0D380223E5E1C003FE8E4 /* UnitsTVC */,
 				CBB0D37C223CFC76003FE8E4 /* ItemVC */,
 				CB0724D6223B5A9F00CB463B /* AppDelegate */,
 				CB0724D7223B5AA600CB463B /* ViewController */,
@@ -259,6 +263,15 @@
 			name = ItemVC;
 			sourceTree = "<group>";
 		};
+		CBB0D380223E5E1C003FE8E4 /* UnitsTVC */ = {
+			isa = PBXGroup;
+			children = (
+				CBB0D381223E794E003FE8E4 /* UnitsTVC.h */,
+				CBB0D382223E794E003FE8E4 /* UnitsTVC.m */,
+			);
+			name = UnitsTVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -342,6 +355,7 @@
 				CB850389223749CD005884C1 /* MigrationVC.m in Sources */,
 				CB0B6BFA223A0DE8000675DB /* Unit+CoreDataClass.m in Sources */,
 				CBB0D37F223CFC8F003FE8E4 /* ItemVC.m in Sources */,
+				CBB0D383223E794E003FE8E4 /* UnitsTVC.m in Sources */,
 				CB7B00762235F0EF004ED213 /* Measurement+CoreDataProperties.m in Sources */,
 				CB8459AE223A567200E759AE /* CoreDataTVC.m in Sources */,
 				CBB0D37B223C8706003FE8E4 /* ShopTVC.m in Sources */,

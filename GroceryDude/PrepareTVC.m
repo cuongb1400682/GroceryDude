@@ -6,7 +6,7 @@
 
 @implementation PrepareTVC
 
-static NSString * const cellIdentifier = @"ItemCell";
+static NSString * const itemCellIdentifier = @"ItemCell";
 
 #pragma mark - DATA
 
@@ -54,7 +54,7 @@ static NSString * const cellIdentifier = @"ItemCell";
 #endif
   Item *item = [self.frc objectAtIndexPath:indexPath];
 
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:itemCellIdentifier
                                                           forIndexPath:indexPath];
   [cell setAccessoryType:UITableViewCellAccessoryDetailButton];
   

@@ -112,6 +112,17 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pe2-Jc-g6M">
+                                                <rect key="frame" x="96" y="76" width="48" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="3bz-R9-CMq"/>
+                                                    <constraint firstAttribute="width" constant="48" id="W9B-Wb-iGt"/>
+                                                </constraints>
+                                                <state key="normal" image="AddUnit"/>
+                                                <connections>
+                                                    <segue destination="biR-dz-iUB" kind="presentation" id="xZg-Bf-toe"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -119,7 +130,9 @@
                                             <constraint firstItem="tFH-Bl-0dJ" firstAttribute="top" secondItem="vdd-z0-VlL" secondAttribute="top" constant="20" symbolic="YES" id="Qap-yO-UuH"/>
                                             <constraint firstAttribute="trailing" secondItem="tFH-Bl-0dJ" secondAttribute="trailing" constant="20" symbolic="YES" id="WvX-PI-qgT"/>
                                             <constraint firstItem="tFH-Bl-0dJ" firstAttribute="leading" secondItem="vdd-z0-VlL" secondAttribute="leading" constant="20" symbolic="YES" id="X4v-sP-2nF"/>
+                                            <constraint firstItem="Pe2-Jc-g6M" firstAttribute="leading" secondItem="Vay-RP-wVI" secondAttribute="trailing" constant="16" id="giK-Ka-zU5"/>
                                             <constraint firstItem="Vay-RP-wVI" firstAttribute="leading" secondItem="vdd-z0-VlL" secondAttribute="leading" constant="20" symbolic="YES" id="hYh-Bk-l0v"/>
+                                            <constraint firstItem="Pe2-Jc-g6M" firstAttribute="top" secondItem="Vay-RP-wVI" secondAttribute="top" id="xV9-FD-hCM"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -444,16 +457,16 @@
             </objects>
             <point key="canvasLocation" x="2409" y="878"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Units-->
         <scene sceneID="hUm-ct-O2V">
             <objects>
-                <tableViewController id="his-0I-bI7" sceneMemberID="viewController">
+                <tableViewController id="his-0I-bI7" customClass="UnitsTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="z5Z-hw-FbK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="62P-dD-R2I">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Unit Cell" id="62P-dD-R2I">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="62P-dD-R2I" id="AHq-dQ-p1q">
@@ -470,8 +483,12 @@
                             <outlet property="delegate" destination="his-0I-bI7" id="Asg-D3-b7F"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="9f8-wZ-AKa">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="UhV-TZ-04R"/>
+                    <navigationItem key="navigationItem" title="Units" id="9f8-wZ-AKa">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="UhV-TZ-04R">
+                            <connections>
+                                <action selector="done:" destination="his-0I-bI7" id="pRL-vN-Vi3"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VYV-yU-2Bm">
                             <connections>
                                 <segue destination="6DX-Pl-Fl5" kind="show" identifier="Add Object Segue" id="fKp-kk-Mdc"/>
@@ -483,7 +500,7 @@
             </objects>
             <point key="canvasLocation" x="3319" y="-575"/>
         </scene>
-        <!--View Controller-->
+        <!--Unit-->
         <scene sceneID="CyI-nL-ztF">
             <objects>
                 <viewController id="6DX-Pl-Fl5" sceneMemberID="viewController">
@@ -491,20 +508,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IRB-kL-JI1">
-                                <rect key="frame" x="20" y="90" width="374" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cdT-3E-bkQ">
+                                <rect key="frame" x="20" y="90" width="374" height="104"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IRB-kL-JI1">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="JK4-VN-XIB"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter unit for measurement, e.g. 'ml', 'pkt', etc." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AwN-d7-2ry">
+                                        <rect key="frame" x="0.0" y="56" width="374" height="48"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="wWf-KF-TGe"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cdT-3E-bkQ" firstAttribute="top" secondItem="p43-Eq-WB7" secondAttribute="top" constant="26" id="RTt-Ye-Uuf"/>
+                            <constraint firstItem="p43-Eq-WB7" firstAttribute="trailing" secondItem="cdT-3E-bkQ" secondAttribute="trailing" constant="20" id="kPU-jW-rBS"/>
+                            <constraint firstItem="cdT-3E-bkQ" firstAttribute="leading" secondItem="p43-Eq-WB7" secondAttribute="leading" constant="20" id="vHW-e4-Kdf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="p43-Eq-WB7"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="wU0-Hc-IBp">
+                    <navigationItem key="navigationItem" title="Unit" id="wU0-Hc-IBp">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="eee-rQ-hE8"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -513,10 +552,10 @@
             </objects>
             <point key="canvasLocation" x="4219" y="-575"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Unit Navigation Controller-->
         <scene sceneID="tTj-S2-V99">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="biR-dz-iUB" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="biR-dz-iUB" userLabel="Unit Navigation Controller" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Z2-Nk-Pcw">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -533,6 +572,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AddUnit" width="170.66667175292969" height="170.66667175292969"/>
         <image name="prepare" width="28" height="22"/>
         <image name="shop" width="30" height="25"/>
     </resources>

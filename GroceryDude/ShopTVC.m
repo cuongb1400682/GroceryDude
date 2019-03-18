@@ -7,14 +7,16 @@
 
 #pragma mark - DATA
 
-NSString * const cellIdentifier = @"ShopCell";
+static NSString * const shopCellIdentifier = @"ShopCell";
 
 - (void)configureFetch {
   CoreDataHelper *cdh = [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
   NSFetchRequest *request = [[[cdh model] fetchRequestTemplateForName:@"ShoppingList"] copy];
   [request setFetchLimit:50];
-  [request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"locationAtShop.aisle" ascending:YES],
-                                [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
+  [request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"locationAtShop.aisle"
+                                                              ascending:YES],
+                                [NSSortDescriptor sortDescriptorWithKey:@"name"
+                                                              ascending:YES]]];
   [self setFrc: [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                     managedObjectContext:[cdh context]
                                                       sectionNameKeyPath:@"locationAtShop.aisle"
@@ -41,7 +43,7 @@ NSString * const cellIdentifier = @"ShopCell";
 #if DEBUG
   NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
 #endif
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:shopCellIdentifier
                                                           forIndexPath:indexPath];
   Item *item = [[self frc] objectAtIndexPath:indexPath];
   NSMutableString *title = [NSMutableString stringWithFormat:@"%d%@ %@",
