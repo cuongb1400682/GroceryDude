@@ -105,20 +105,3 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

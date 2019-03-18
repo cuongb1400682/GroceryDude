@@ -112,17 +112,34 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pe2-Jc-g6M">
-                                                <rect key="frame" x="96" y="76" width="48" height="48"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="48" id="3bz-R9-CMq"/>
-                                                    <constraint firstAttribute="width" constant="48" id="W9B-Wb-iGt"/>
-                                                </constraints>
-                                                <state key="normal" image="AddUnit"/>
-                                                <connections>
-                                                    <segue destination="biR-dz-iUB" kind="presentation" id="xZg-Bf-toe"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Peh-Ca-9G9">
+                                                <rect key="frame" x="96" y="76" width="96" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pe2-Jc-g6M">
+                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="3bz-R9-CMq"/>
+                                                            <constraint firstAttribute="width" constant="48" id="W9B-Wb-iGt"/>
+                                                        </constraints>
+                                                        <state key="normal" image="AddUnit"/>
+                                                        <connections>
+                                                            <segue destination="biR-dz-iUB" kind="presentation" id="xZg-Bf-toe"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4w-Kg-JnH">
+                                                        <rect key="frame" x="48" y="0.0" width="48" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="48" id="7UD-Ux-FKB"/>
+                                                            <constraint firstAttribute="height" constant="48" id="KBU-KX-lbR"/>
+                                                        </constraints>
+                                                        <state key="normal" image="AddHome"/>
+                                                        <connections>
+                                                            <segue destination="WMY-J5-j9W" kind="presentation" id="idV-Xz-pJM"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -130,9 +147,7 @@
                                             <constraint firstItem="tFH-Bl-0dJ" firstAttribute="top" secondItem="vdd-z0-VlL" secondAttribute="top" constant="20" symbolic="YES" id="Qap-yO-UuH"/>
                                             <constraint firstAttribute="trailing" secondItem="tFH-Bl-0dJ" secondAttribute="trailing" constant="20" symbolic="YES" id="WvX-PI-qgT"/>
                                             <constraint firstItem="tFH-Bl-0dJ" firstAttribute="leading" secondItem="vdd-z0-VlL" secondAttribute="leading" constant="20" symbolic="YES" id="X4v-sP-2nF"/>
-                                            <constraint firstItem="Pe2-Jc-g6M" firstAttribute="leading" secondItem="Vay-RP-wVI" secondAttribute="trailing" constant="16" id="giK-Ka-zU5"/>
                                             <constraint firstItem="Vay-RP-wVI" firstAttribute="leading" secondItem="vdd-z0-VlL" secondAttribute="leading" constant="20" symbolic="YES" id="hYh-Bk-l0v"/>
-                                            <constraint firstItem="Pe2-Jc-g6M" firstAttribute="top" secondItem="Vay-RP-wVI" secondAttribute="top" id="xV9-FD-hCM"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -166,16 +181,16 @@
             </objects>
             <point key="canvasLocation" x="1481.1594202898552" y="148.36956521739131"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Home Locations-->
         <scene sceneID="k0T-DF-60E">
             <objects>
-                <tableViewController id="G2H-hZ-tLp" sceneMemberID="viewController">
+                <tableViewController id="G2H-hZ-tLp" customClass="LocationAtHomeTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="H7c-m7-TAY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="A1r-V2-G4W">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationAtHome Cell" id="A1r-V2-G4W">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A1r-V2-G4W" id="9II-Ef-PJ7">
@@ -192,7 +207,7 @@
                             <outlet property="delegate" destination="G2H-hZ-tLp" id="5t2-3B-utf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="FAd-wc-QfK">
+                    <navigationItem key="navigationItem" title="Home Locations" id="FAd-wc-QfK">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="Bhc-wU-NOg"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NhO-et-qeV">
                             <connections>
@@ -205,28 +220,50 @@
             </objects>
             <point key="canvasLocation" x="3319" y="148"/>
         </scene>
-        <!--View Controller-->
+        <!--Home Location-->
         <scene sceneID="uEb-O7-ccc">
             <objects>
-                <viewController id="Umv-MB-oa1" sceneMemberID="viewController">
+                <viewController id="Umv-MB-oa1" customClass="LocationAtHomeVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GQ6-mJ-WXM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HMY-mT-qe0">
-                                <rect key="frame" x="20" y="90" width="374" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="T8b-cn-1G8">
+                                <rect key="frame" x="20" y="90" width="374" height="104"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HMY-mT-qe0">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="Cy5-5r-wdD"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="E.g. 'Pantry' or 'Bathroom'" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xjc-9b-hEf">
+                                        <rect key="frame" x="0.0" y="56" width="374" height="48"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="0xm-ZO-ApD"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="T8b-cn-1G8" firstAttribute="leading" secondItem="GxW-sn-4mQ" secondAttribute="leading" constant="20" id="9Ht-QB-ayz"/>
+                            <constraint firstItem="GxW-sn-4mQ" firstAttribute="trailing" secondItem="T8b-cn-1G8" secondAttribute="trailing" constant="20" id="wbf-5B-9Ur"/>
+                            <constraint firstItem="T8b-cn-1G8" firstAttribute="top" secondItem="GxW-sn-4mQ" secondAttribute="top" constant="26" id="xSF-bP-yig"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GxW-sn-4mQ"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Wj6-0H-OP6">
+                    <navigationItem key="navigationItem" title="Home Location" id="Wj6-0H-OP6">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="RTw-Wc-7hS"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -368,7 +405,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h1n-yh-nc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2410" y="148"/>
+            <point key="canvasLocation" x="2409" y="148"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Svd-Ab-Xpm">
@@ -521,7 +558,7 @@
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter unit for measurement, e.g. 'ml', 'pkt', etc." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AwN-d7-2ry">
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="E.g. 'ml', 'pkg', 'kg', etc." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AwN-d7-2ry">
                                         <rect key="frame" x="0.0" y="56" width="374" height="48"/>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -579,6 +616,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AddHome" width="170.66667175292969" height="170.66667175292969"/>
         <image name="AddUnit" width="170.66667175292969" height="170.66667175292969"/>
         <image name="prepare" width="28" height="22"/>
         <image name="shop" width="30" height="25"/>
