@@ -34,7 +34,7 @@ static NSString * const shopCellIdentifier = @"Unit Cell";
   [self performFetch];
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(performFetch)
-                                               name:@"somethingChanged"
+                                               name:@"SomethingChanged"
                                              object:nil];
 }
 
@@ -92,6 +92,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (![[cdh context] obtainPermanentIDsForObjects:@[newUnit] error:&error]) {
       NSLog(@"Couldn't obtain a permanent ID for object: %@", [error description]);
     }
+    
     [unitVC setSelectedObjectID:[newUnit objectID]];
   } else if ([segueIdentifier isEqualToString:@"Edit Object Segue"]) {
     NSIndexPath *indexPath = [[self tableView] indexPathForSelectedRow];

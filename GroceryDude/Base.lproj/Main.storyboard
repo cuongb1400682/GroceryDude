@@ -113,7 +113,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Peh-Ca-9G9">
-                                                <rect key="frame" x="96" y="76" width="96" height="48"/>
+                                                <rect key="frame" x="96" y="76" width="144" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pe2-Jc-g6M">
@@ -136,6 +136,17 @@
                                                         <state key="normal" image="AddHome"/>
                                                         <connections>
                                                             <segue destination="WMY-J5-j9W" kind="presentation" id="idV-Xz-pJM"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEO-Fy-vhn">
+                                                        <rect key="frame" x="96" y="0.0" width="48" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="JsF-BZ-HIR"/>
+                                                            <constraint firstAttribute="width" constant="48" id="VHk-oD-U4n"/>
+                                                        </constraints>
+                                                        <state key="normal" image="AddShop"/>
+                                                        <connections>
+                                                            <segue destination="06X-No-uy6" kind="presentation" id="AaH-dk-6To"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -208,7 +219,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Home Locations" id="FAd-wc-QfK">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="Bhc-wU-NOg"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="Bhc-wU-NOg">
+                            <connections>
+                                <action selector="done:" destination="G2H-hZ-tLp" id="V3K-0w-6CB"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NhO-et-qeV">
                             <connections>
                                 <segue destination="Umv-MB-oa1" kind="show" identifier="Add Object Segue" id="haW-Yk-FI2"/>
@@ -218,7 +233,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bA-rn-fBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3319" y="148"/>
+            <point key="canvasLocation" x="3449" y="-104"/>
         </scene>
         <!--Home Location-->
         <scene sceneID="uEb-O7-ccc">
@@ -264,13 +279,20 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Home Location" id="Wj6-0H-OP6">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="RTw-Wc-7hS"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="RTw-Wc-7hS">
+                            <connections>
+                                <action selector="done:" destination="Umv-MB-oa1" id="S1r-q5-Tcw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="HMY-mT-qe0" id="SrA-KH-ReV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvs-Bh-nea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4219" y="148"/>
+            <point key="canvasLocation" x="4349" y="-104"/>
         </scene>
         <!--MigrationVC-->
         <scene sceneID="FZC-Cl-LZU">
@@ -405,7 +427,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h1n-yh-nc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2409" y="148"/>
+            <point key="canvasLocation" x="2491" y="-104"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Svd-Ab-Xpm">
@@ -444,7 +466,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mTW-Mf-3BG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3319" y="878"/>
+            <point key="canvasLocation" x="3449" y="626"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Br5-4J-Vc4">
@@ -474,7 +496,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mnM-Ek-lRR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4219" y="878"/>
+            <point key="canvasLocation" x="4349" y="626"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VQz-FJ-dcL">
@@ -492,7 +514,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DCi-Kw-mhc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2409" y="878"/>
+            <point key="canvasLocation" x="2491" y="626"/>
         </scene>
         <!--Units-->
         <scene sceneID="hUm-ct-O2V">
@@ -535,7 +557,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yEm-Rk-raE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3319" y="-575"/>
+            <point key="canvasLocation" x="3448" y="-858"/>
         </scene>
         <!--Unit-->
         <scene sceneID="CyI-nL-ztF">
@@ -594,7 +616,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7A-LP-EfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4219" y="-575"/>
+            <point key="canvasLocation" x="4348" y="-858"/>
         </scene>
         <!--Unit Navigation Controller-->
         <scene sceneID="tTj-S2-V99">
@@ -612,18 +634,19 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="en1-1F-Dsx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2409" y="-575"/>
+            <point key="canvasLocation" x="2491" y="-858"/>
         </scene>
     </scenes>
     <resources>
         <image name="AddHome" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="AddShop" width="170.66667175292969" height="170.66667175292969"/>
         <image name="AddUnit" width="170.66667175292969" height="170.66667175292969"/>
         <image name="prepare" width="28" height="22"/>
         <image name="shop" width="30" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fKp-kk-Mdc"/>
-        <segue reference="zpT-Kn-EFY"/>
+        <segue reference="cRp-Vc-hEv"/>
         <segue reference="haW-Yk-FI2"/>
     </inferredMetricsTieBreakers>
 </document>

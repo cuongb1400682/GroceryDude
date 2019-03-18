@@ -8,6 +8,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
 #import "LocationAtHome+CoreDataProperties.h"
 #import "Location+CoreDataProperties.h"
 
@@ -16,6 +18,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LocationAtHome : Location
+
+@property (strong, nonatomic) NSManagedObjectID *selectedObjectID;
 
 @end
 

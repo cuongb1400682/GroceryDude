@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataHelper.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LocationAtHomeVC : UIViewController
+@interface LocationAtHomeVC : UIViewController <UITextFieldDelegate>
+
+@property (strong, nonatomic) NSManagedObjectID *selectedObjectID;
+@property (strong, nonatomic) IBOutlet UITextField *nameTextField;
 
 @end
 
