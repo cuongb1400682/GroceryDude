@@ -456,10 +456,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Shop Locations" id="NbL-uI-CmQ">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="OgS-nP-dw7"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="OgS-nP-dw7">
+                            <connections>
+                                <action selector="done:" destination="2Kz-oh-6Cw" id="HmE-ti-JCE"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6qr-H5-GdS">
                             <connections>
-                                <segue destination="MaO-9r-mwu" kind="show" identifier="Add Object Segue" id="cRp-Vc-hEv"/>
+                                <segue destination="MaO-9r-mwu" kind="show" identifier="Add Object Segue" id="Qm4-s6-iab"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -512,9 +516,16 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Shop Location" id="I5i-s6-DYz">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="R0a-GI-dka"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="R0a-GI-dka">
+                            <connections>
+                                <action selector="done:" destination="MaO-9r-mwu" id="QMa-U1-let"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="oaG-IG-0AO" id="mdb-Af-wUF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mnM-Ek-lRR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -668,7 +679,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fKp-kk-Mdc"/>
-        <segue reference="cRp-Vc-hEv"/>
+        <segue reference="Qm4-s6-iab"/>
         <segue reference="haW-Yk-FI2"/>
     </inferredMetricsTieBreakers>
 </document>

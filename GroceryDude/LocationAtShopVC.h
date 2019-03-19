@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocationAtShop+CoreDataProperties.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LocationAtShopVC : UITableViewController
+@interface LocationAtShopVC : UIViewController <UITextFieldDelegate>
+
+@property (strong, nonatomic) NSManagedObjectID *selectedObjectID;
+@property (strong, nonatomic) IBOutlet UITextField *nameTextField;
 
 @end
 
