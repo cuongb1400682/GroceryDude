@@ -22,10 +22,10 @@
 		CB646AEF22407FE4002EB7E4 /* Unit+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB646AE322407FE4002EB7E4 /* Unit+CoreDataProperties.m */; };
 		CB646AF022407FE4002EB7E4 /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB646AE622407FE4002EB7E4 /* Item+CoreDataClass.m */; };
 		CB646AF122407FE4002EB7E4 /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB646AE722407FE4002EB7E4 /* Item+CoreDataProperties.m */; };
+		CB646AF622408C0B002EB7E4 /* CoreDataPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = CB646AF522408C0B002EB7E4 /* CoreDataPickerTF.m */; };
 		CB8459AE223A567200E759AE /* CoreDataTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8459AD223A567200E759AE /* CoreDataTVC.m */; };
 		CB850389223749CD005884C1 /* MigrationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB850388223749CD005884C1 /* MigrationVC.m */; };
 		CBA4499B2234A23A0041ACA7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA4499A2234A23A0041ACA7 /* AppDelegate.m */; };
-		CBA4499E2234A23A0041ACA7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA4499D2234A23A0041ACA7 /* ViewController.m */; };
 		CBA449A12234A23A0041ACA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA4499F2234A23A0041ACA7 /* Main.storyboard */; };
 		CBA449A62234A23B0041ACA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBA449A52234A23B0041ACA7 /* Assets.xcassets */; };
 		CBA449A92234A23B0041ACA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA449A72234A23B0041ACA7 /* LaunchScreen.storyboard */; };
@@ -69,6 +69,8 @@
 		CB646AE522407FE4002EB7E4 /* Item+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataClass.h"; sourceTree = "<group>"; };
 		CB646AE622407FE4002EB7E4 /* Item+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataClass.m"; sourceTree = "<group>"; };
 		CB646AE722407FE4002EB7E4 /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
+		CB646AF422408C0B002EB7E4 /* CoreDataPickerTF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataPickerTF.h; sourceTree = "<group>"; };
+		CB646AF522408C0B002EB7E4 /* CoreDataPickerTF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataPickerTF.m; sourceTree = "<group>"; };
 		CB7B00702235EF72004ED213 /* GroceryDude 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 2.xcdatamodel"; sourceTree = "<group>"; };
 		CB845977223A319F00E759AE /* GroceryDude 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 5.xcdatamodel"; sourceTree = "<group>"; };
 		CB845983223A4C8700E759AE /* GroceryDude 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 6.xcdatamodel"; sourceTree = "<group>"; };
@@ -80,8 +82,6 @@
 		CBA449962234A23A0041ACA7 /* GroceryDude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryDude.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA449992234A23A0041ACA7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CBA4499A2234A23A0041ACA7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CBA4499C2234A23A0041ACA7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CBA4499D2234A23A0041ACA7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CBA449A02234A23A0041ACA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBA449A52234A23B0041ACA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBA449A82234A23B0041ACA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -133,15 +133,6 @@
 			name = AppDelegate;
 			sourceTree = "<group>";
 		};
-		CB0724D7223B5AA600CB463B /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CBA4499C2234A23A0041ACA7 /* ViewController.h */,
-				CBA4499D2234A23A0041ACA7 /* ViewController.m */,
-			);
-			name = ViewController;
-			sourceTree = "<group>";
-		};
 		CB0724D8223B5AB100CB463B /* MigrationVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,8 +180,6 @@
 		CB381D182234EB9B00D16E87 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CBA4499F2234A23A0041ACA7 /* Main.storyboard */,
-				CBA449A72234A23B0041ACA7 /* LaunchScreen.storyboard */,
 				CBA449A52234A23B0041ACA7 /* Assets.xcassets */,
 				CBA449AA2234A23B0041ACA7 /* Info.plist */,
 				CBA449AB2234A23B0041ACA7 /* main.m */,
@@ -206,9 +195,7 @@
 				CBAFBFB8223F8CE100EF35B7 /* Units */,
 				CBAFBFB9223F8D0200EF35B7 /* Items */,
 				CB0724D6223B5A9F00CB463B /* AppDelegate */,
-				CB0724D7223B5AA600CB463B /* ViewController */,
 				CB0724D8223B5AB100CB463B /* MigrationVC */,
-				CB0724D5223B5A8900CB463B /* CoreDataTVC */,
 				CBB0D378223C86E5003FE8E4 /* ShopTVC */,
 			);
 			name = Controllers;
@@ -238,9 +225,44 @@
 				CB646AE622407FE4002EB7E4 /* Item+CoreDataClass.m */,
 				CB646AE722407FE4002EB7E4 /* Item+CoreDataProperties.m */,
 				CB381D1E2234F48C00D16E87 /* Model.xcdatamodeld */,
-				CB381D172234E87600D16E87 /* Core Data Helper */,
 			);
 			name = "Data Models";
+			sourceTree = "<group>";
+		};
+		CB646AF222408B95002EB7E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB646AF822408D67002EB7E4 /* Storyboards */,
+				CB646AF322408BE8002EB7E4 /* CoreDataPickerTF */,
+				CB0724D5223B5A8900CB463B /* CoreDataTVC */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CB646AF322408BE8002EB7E4 /* CoreDataPickerTF */ = {
+			isa = PBXGroup;
+			children = (
+				CB646AF422408C0B002EB7E4 /* CoreDataPickerTF.h */,
+				CB646AF522408C0B002EB7E4 /* CoreDataPickerTF.m */,
+			);
+			name = CoreDataPickerTF;
+			sourceTree = "<group>";
+		};
+		CB646AF722408D4B002EB7E4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CB381D172234E87600D16E87 /* Core Data Helper */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		CB646AF822408D67002EB7E4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CBA4499F2234A23A0041ACA7 /* Main.storyboard */,
+				CBA449A72234A23B0041ACA7 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		CBA4498D2234A23A0041ACA7 = {
@@ -263,6 +285,8 @@
 		CBA449982234A23A0041ACA7 /* GroceryDude */ = {
 			isa = PBXGroup;
 			children = (
+				CB646AF722408D4B002EB7E4 /* Utils */,
+				CB646AF222408B95002EB7E4 /* Views */,
 				CB381D1A2234EBCB00D16E87 /* Data Models */,
 				CB381D192234EBBF00D16E87 /* Controllers */,
 				CB381D182234EB9B00D16E87 /* Supporting Files */,
@@ -443,7 +467,7 @@
 				CB30B46F223F2E3F00CF4592 /* UnitVC.m in Sources */,
 				CBAFBFC8223F9CB400EF35B7 /* LocationAtShopTVC.m in Sources */,
 				CBAFBFBF223F8D7700EF35B7 /* LocationAtHomeTVC.m in Sources */,
-				CBA4499E2234A23A0041ACA7 /* ViewController.m in Sources */,
+				CB646AF622408C0B002EB7E4 /* CoreDataPickerTF.m in Sources */,
 				CBAFBFCB223F9CC300EF35B7 /* LocationAtShopVC.m in Sources */,
 				CB646AF122407FE4002EB7E4 /* Item+CoreDataProperties.m in Sources */,
 				CB646AEE22407FE4002EB7E4 /* Unit+CoreDataClass.m in Sources */,
