@@ -429,10 +429,10 @@
             </objects>
             <point key="canvasLocation" x="2491" y="-104"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Shop Locations-->
         <scene sceneID="Svd-Ab-Xpm">
             <objects>
-                <tableViewController id="2Kz-oh-6Cw" sceneMemberID="viewController">
+                <tableViewController id="2Kz-oh-6Cw" customClass="LocationAtHomeTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2pT-8e-dfe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -455,7 +455,7 @@
                             <outlet property="delegate" destination="2Kz-oh-6Cw" id="gsy-ga-Qst"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="NbL-uI-CmQ">
+                    <navigationItem key="navigationItem" title="Shop Locations" id="NbL-uI-CmQ">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="OgS-nP-dw7"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6qr-H5-GdS">
                             <connections>
@@ -468,28 +468,50 @@
             </objects>
             <point key="canvasLocation" x="3449" y="626"/>
         </scene>
-        <!--View Controller-->
+        <!--Shop Location-->
         <scene sceneID="Br5-4J-Vc4">
             <objects>
-                <viewController id="MaO-9r-mwu" sceneMemberID="viewController">
+                <viewController id="MaO-9r-mwu" customClass="LocationAtShopVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gLG-JC-xwH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oaG-IG-0AO">
-                                <rect key="frame" x="20" y="90" width="374" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="she-OP-as8">
+                                <rect key="frame" x="20" y="90" width="374" height="104"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oaG-IG-0AO">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="Ji0-2r-HSr"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="E.g. 'Aisle' or 'Cashier'" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yxc-s0-L6I">
+                                        <rect key="frame" x="0.0" y="56" width="374" height="48"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="f8t-59-qhc"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rJC-aI-cyx" firstAttribute="trailing" secondItem="she-OP-as8" secondAttribute="trailing" constant="20" id="6rh-CO-5nu"/>
+                            <constraint firstItem="she-OP-as8" firstAttribute="leading" secondItem="rJC-aI-cyx" secondAttribute="leading" constant="20" id="xjY-OJ-tuZ"/>
+                            <constraint firstItem="she-OP-as8" firstAttribute="top" secondItem="rJC-aI-cyx" secondAttribute="top" constant="26" id="xtW-53-wbS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rJC-aI-cyx"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="I5i-s6-DYz">
+                    <navigationItem key="navigationItem" title="Shop Location" id="I5i-s6-DYz">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="R0a-GI-dka"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>

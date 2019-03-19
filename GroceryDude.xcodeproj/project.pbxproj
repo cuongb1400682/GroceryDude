@@ -8,21 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		CB0724DC223B61AD00CB463B /* PrepareTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0724DB223B61AD00CB463B /* PrepareTVC.m */; };
-		CB0B6BFA223A0DE8000675DB /* Unit+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0B6BF8223A0DE8000675DB /* Unit+CoreDataClass.m */; };
-		CB0B6BFB223A0DE8000675DB /* Unit+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0B6BF9223A0DE8000675DB /* Unit+CoreDataProperties.m */; };
 		CB30B46F223F2E3F00CF4592 /* UnitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB30B46E223F2E3F00CF4592 /* UnitVC.m */; };
 		CB381D112234A64500D16E87 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB381D102234A64500D16E87 /* CoreData.framework */; };
 		CB381D162234A6AE00D16E87 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB381D152234A6AE00D16E87 /* CoreDataHelper.m */; };
 		CB381D202234F48C00D16E87 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB381D1E2234F48C00D16E87 /* Model.xcdatamodeld */; };
-		CB381D302234F90000D16E87 /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB381D2A2234F4EA00D16E87 /* Item+CoreDataProperties.m */; };
-		CB381D312234F90000D16E87 /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB381D292234F4EA00D16E87 /* Item+CoreDataClass.m */; };
-		CB7B00752235F0EF004ED213 /* Measurement+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7B00732235F0EF004ED213 /* Measurement+CoreDataClass.m */; };
-		CB7B00762235F0EF004ED213 /* Measurement+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7B00742235F0EF004ED213 /* Measurement+CoreDataProperties.m */; };
-		CB8459A8223A4FB900E759AE /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8459A0223A4FB900E759AE /* Item+CoreDataProperties.m */; };
-		CB8459AA223A4FB900E759AE /* Unit+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8459A4223A4FB900E759AE /* Unit+CoreDataProperties.m */; };
+		CB646AE822407FE4002EB7E4 /* Location+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB646AD622407FE4002EB7E4 /* Location+CoreDataClass.m */; };
+		CB646AE922407FE4002EB7E4 /* Location+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB646AD722407FE4002EB7E4 /* Location+CoreDataProperties.m */; };
+		CB646AEA22407FE4002EB7E4 /* LocationAtHome+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB646ADA22407FE4002EB7E4 /* LocationAtHome+CoreDataClass.m */; };
+		CB646AEB22407FE4002EB7E4 /* LocationAtHome+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB646ADB22407FE4002EB7E4 /* LocationAtHome+CoreDataProperties.m */; };
+		CB646AEC22407FE4002EB7E4 /* LocationAtShop+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB646ADE22407FE4002EB7E4 /* LocationAtShop+CoreDataClass.m */; };
+		CB646AED22407FE4002EB7E4 /* LocationAtShop+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB646ADF22407FE4002EB7E4 /* LocationAtShop+CoreDataProperties.m */; };
+		CB646AEE22407FE4002EB7E4 /* Unit+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB646AE222407FE4002EB7E4 /* Unit+CoreDataClass.m */; };
+		CB646AEF22407FE4002EB7E4 /* Unit+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB646AE322407FE4002EB7E4 /* Unit+CoreDataProperties.m */; };
+		CB646AF022407FE4002EB7E4 /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB646AE622407FE4002EB7E4 /* Item+CoreDataClass.m */; };
+		CB646AF122407FE4002EB7E4 /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB646AE722407FE4002EB7E4 /* Item+CoreDataProperties.m */; };
 		CB8459AE223A567200E759AE /* CoreDataTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8459AD223A567200E759AE /* CoreDataTVC.m */; };
-		CB85038322374364005884C1 /* Amount+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB85038122374364005884C1 /* Amount+CoreDataClass.m */; };
-		CB85038422374364005884C1 /* Amount+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB85038222374364005884C1 /* Amount+CoreDataProperties.m */; };
 		CB850389223749CD005884C1 /* MigrationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB850388223749CD005884C1 /* MigrationVC.m */; };
 		CBA4499B2234A23A0041ACA7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA4499A2234A23A0041ACA7 /* AppDelegate.m */; };
 		CBA4499E2234A23A0041ACA7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA4499D2234A23A0041ACA7 /* ViewController.m */; };
@@ -32,6 +32,8 @@
 		CBA449AC2234A23B0041ACA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA449AB2234A23B0041ACA7 /* main.m */; };
 		CBAFBFBF223F8D7700EF35B7 /* LocationAtHomeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAFBFBE223F8D7700EF35B7 /* LocationAtHomeTVC.m */; };
 		CBAFBFC2223F8D9000EF35B7 /* LocationAtHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAFBFC1223F8D9000EF35B7 /* LocationAtHomeVC.m */; };
+		CBAFBFC8223F9CB400EF35B7 /* LocationAtShopTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAFBFC7223F9CB400EF35B7 /* LocationAtShopTVC.m */; };
+		CBAFBFCB223F9CC300EF35B7 /* LocationAtShopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAFBFCA223F9CC300EF35B7 /* LocationAtShopVC.m */; };
 		CBB0D37B223C8706003FE8E4 /* ShopTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB0D37A223C8706003FE8E4 /* ShopTVC.m */; };
 		CBB0D37F223CFC8F003FE8E4 /* ItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB0D37E223CFC8F003FE8E4 /* ItemVC.m */; };
 		CBB0D383223E794E003FE8E4 /* UnitsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB0D382223E794E003FE8E4 /* UnitsTVC.m */; };
@@ -41,38 +43,38 @@
 		CB0724DA223B61AD00CB463B /* PrepareTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrepareTVC.h; sourceTree = "<group>"; };
 		CB0724DB223B61AD00CB463B /* PrepareTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrepareTVC.m; sourceTree = "<group>"; };
 		CB0B6BF1223A0C91000675DB /* GroceryDude 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 4.xcdatamodel"; sourceTree = "<group>"; };
-		CB0B6BF6223A0DE8000675DB /* Unit+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit+CoreDataProperties.h"; sourceTree = "<group>"; };
-		CB0B6BF7223A0DE8000675DB /* Unit+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit+CoreDataClass.h"; sourceTree = "<group>"; };
-		CB0B6BF8223A0DE8000675DB /* Unit+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Unit+CoreDataClass.m"; sourceTree = "<group>"; };
-		CB0B6BF9223A0DE8000675DB /* Unit+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Unit+CoreDataProperties.m"; sourceTree = "<group>"; };
 		CB30B46D223F2E3F00CF4592 /* UnitVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitVC.h; sourceTree = "<group>"; };
 		CB30B46E223F2E3F00CF4592 /* UnitVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitVC.m; sourceTree = "<group>"; };
 		CB381D102234A64500D16E87 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CB381D142234A6AE00D16E87 /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		CB381D152234A6AE00D16E87 /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		CB381D1F2234F48C00D16E87 /* GroceryDude.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GroceryDude.xcdatamodel; sourceTree = "<group>"; };
-		CB381D272234F4EA00D16E87 /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataProperties.h"; sourceTree = "<group>"; };
-		CB381D282234F4EA00D16E87 /* Item+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataClass.h"; sourceTree = "<group>"; };
-		CB381D292234F4EA00D16E87 /* Item+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataClass.m"; sourceTree = "<group>"; };
-		CB381D2A2234F4EA00D16E87 /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
+		CB646AD422407FE4002EB7E4 /* Location+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Location+CoreDataProperties.h"; sourceTree = "<group>"; };
+		CB646AD522407FE4002EB7E4 /* Location+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Location+CoreDataClass.h"; sourceTree = "<group>"; };
+		CB646AD622407FE4002EB7E4 /* Location+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Location+CoreDataClass.m"; sourceTree = "<group>"; };
+		CB646AD722407FE4002EB7E4 /* Location+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Location+CoreDataProperties.m"; sourceTree = "<group>"; };
+		CB646AD822407FE4002EB7E4 /* LocationAtHome+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocationAtHome+CoreDataProperties.h"; sourceTree = "<group>"; };
+		CB646AD922407FE4002EB7E4 /* LocationAtHome+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocationAtHome+CoreDataClass.h"; sourceTree = "<group>"; };
+		CB646ADA22407FE4002EB7E4 /* LocationAtHome+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LocationAtHome+CoreDataClass.m"; sourceTree = "<group>"; };
+		CB646ADB22407FE4002EB7E4 /* LocationAtHome+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LocationAtHome+CoreDataProperties.m"; sourceTree = "<group>"; };
+		CB646ADC22407FE4002EB7E4 /* LocationAtShop+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocationAtShop+CoreDataProperties.h"; sourceTree = "<group>"; };
+		CB646ADD22407FE4002EB7E4 /* LocationAtShop+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocationAtShop+CoreDataClass.h"; sourceTree = "<group>"; };
+		CB646ADE22407FE4002EB7E4 /* LocationAtShop+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LocationAtShop+CoreDataClass.m"; sourceTree = "<group>"; };
+		CB646ADF22407FE4002EB7E4 /* LocationAtShop+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LocationAtShop+CoreDataProperties.m"; sourceTree = "<group>"; };
+		CB646AE022407FE4002EB7E4 /* Unit+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit+CoreDataProperties.h"; sourceTree = "<group>"; };
+		CB646AE122407FE4002EB7E4 /* Unit+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit+CoreDataClass.h"; sourceTree = "<group>"; };
+		CB646AE222407FE4002EB7E4 /* Unit+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Unit+CoreDataClass.m"; sourceTree = "<group>"; };
+		CB646AE322407FE4002EB7E4 /* Unit+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Unit+CoreDataProperties.m"; sourceTree = "<group>"; };
+		CB646AE422407FE4002EB7E4 /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataProperties.h"; sourceTree = "<group>"; };
+		CB646AE522407FE4002EB7E4 /* Item+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataClass.h"; sourceTree = "<group>"; };
+		CB646AE622407FE4002EB7E4 /* Item+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataClass.m"; sourceTree = "<group>"; };
+		CB646AE722407FE4002EB7E4 /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
 		CB7B00702235EF72004ED213 /* GroceryDude 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 2.xcdatamodel"; sourceTree = "<group>"; };
-		CB7B00712235F0EF004ED213 /* Measurement+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataProperties.h"; sourceTree = "<group>"; };
-		CB7B00722235F0EF004ED213 /* Measurement+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataClass.h"; sourceTree = "<group>"; };
-		CB7B00732235F0EF004ED213 /* Measurement+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Measurement+CoreDataClass.m"; sourceTree = "<group>"; };
-		CB7B00742235F0EF004ED213 /* Measurement+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Measurement+CoreDataProperties.m"; sourceTree = "<group>"; };
 		CB845977223A319F00E759AE /* GroceryDude 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 5.xcdatamodel"; sourceTree = "<group>"; };
 		CB845983223A4C8700E759AE /* GroceryDude 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 6.xcdatamodel"; sourceTree = "<group>"; };
-		CB84599F223A4FB900E759AE /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataProperties.h"; sourceTree = "<group>"; };
-		CB8459A0223A4FB900E759AE /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
-		CB8459A3223A4FB900E759AE /* Unit+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit+CoreDataProperties.h"; sourceTree = "<group>"; };
-		CB8459A4223A4FB900E759AE /* Unit+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Unit+CoreDataProperties.m"; sourceTree = "<group>"; };
 		CB8459AC223A567200E759AE /* CoreDataTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataTVC.h; sourceTree = "<group>"; };
 		CB8459AD223A567200E759AE /* CoreDataTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataTVC.m; sourceTree = "<group>"; };
 		CB85037E2237431B005884C1 /* GroceryDude 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 3.xcdatamodel"; sourceTree = "<group>"; };
-		CB85037F22374364005884C1 /* Amount+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Amount+CoreDataProperties.h"; sourceTree = "<group>"; };
-		CB85038022374364005884C1 /* Amount+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Amount+CoreDataClass.h"; sourceTree = "<group>"; };
-		CB85038122374364005884C1 /* Amount+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Amount+CoreDataClass.m"; sourceTree = "<group>"; };
-		CB85038222374364005884C1 /* Amount+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Amount+CoreDataProperties.m"; sourceTree = "<group>"; };
 		CB850387223749CD005884C1 /* MigrationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MigrationVC.h; sourceTree = "<group>"; };
 		CB850388223749CD005884C1 /* MigrationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MigrationVC.m; sourceTree = "<group>"; };
 		CBA449962234A23A0041ACA7 /* GroceryDude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryDude.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +91,10 @@
 		CBAFBFBE223F8D7700EF35B7 /* LocationAtHomeTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAtHomeTVC.m; sourceTree = "<group>"; };
 		CBAFBFC0223F8D9000EF35B7 /* LocationAtHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationAtHomeVC.h; sourceTree = "<group>"; };
 		CBAFBFC1223F8D9000EF35B7 /* LocationAtHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAtHomeVC.m; sourceTree = "<group>"; };
+		CBAFBFC6223F9CB400EF35B7 /* LocationAtShopTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationAtShopTVC.h; sourceTree = "<group>"; };
+		CBAFBFC7223F9CB400EF35B7 /* LocationAtShopTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAtShopTVC.m; sourceTree = "<group>"; };
+		CBAFBFC9223F9CC300EF35B7 /* LocationAtShopVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationAtShopVC.h; sourceTree = "<group>"; };
+		CBAFBFCA223F9CC300EF35B7 /* LocationAtShopVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAtShopVC.m; sourceTree = "<group>"; };
 		CBB0D379223C8706003FE8E4 /* ShopTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopTVC.h; sourceTree = "<group>"; };
 		CBB0D37A223C8706003FE8E4 /* ShopTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopTVC.m; sourceTree = "<group>"; };
 		CBB0D37D223CFC8F003FE8E4 /* ItemVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemVC.h; sourceTree = "<group>"; };
@@ -195,6 +201,7 @@
 		CB381D192234EBBF00D16E87 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CBAFBFC3223F9B9600EF35B7 /* ShopLocations */,
 				CBAFBFBA223F8D2200EF35B7 /* HomeLocations */,
 				CBAFBFB8223F8CE100EF35B7 /* Units */,
 				CBAFBFB9223F8D0200EF35B7 /* Items */,
@@ -210,26 +217,26 @@
 		CB381D1A2234EBCB00D16E87 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
-				CB84599F223A4FB900E759AE /* Item+CoreDataProperties.h */,
-				CB8459A0223A4FB900E759AE /* Item+CoreDataProperties.m */,
-				CB8459A3223A4FB900E759AE /* Unit+CoreDataProperties.h */,
-				CB8459A4223A4FB900E759AE /* Unit+CoreDataProperties.m */,
-				CB85037F22374364005884C1 /* Amount+CoreDataProperties.h */,
-				CB85038022374364005884C1 /* Amount+CoreDataClass.h */,
-				CB85038122374364005884C1 /* Amount+CoreDataClass.m */,
-				CB85038222374364005884C1 /* Amount+CoreDataProperties.m */,
-				CB381D272234F4EA00D16E87 /* Item+CoreDataProperties.h */,
-				CB381D2A2234F4EA00D16E87 /* Item+CoreDataProperties.m */,
-				CB381D282234F4EA00D16E87 /* Item+CoreDataClass.h */,
-				CB381D292234F4EA00D16E87 /* Item+CoreDataClass.m */,
-				CB7B00712235F0EF004ED213 /* Measurement+CoreDataProperties.h */,
-				CB7B00722235F0EF004ED213 /* Measurement+CoreDataClass.h */,
-				CB7B00732235F0EF004ED213 /* Measurement+CoreDataClass.m */,
-				CB7B00742235F0EF004ED213 /* Measurement+CoreDataProperties.m */,
-				CB0B6BF6223A0DE8000675DB /* Unit+CoreDataProperties.h */,
-				CB0B6BF7223A0DE8000675DB /* Unit+CoreDataClass.h */,
-				CB0B6BF8223A0DE8000675DB /* Unit+CoreDataClass.m */,
-				CB0B6BF9223A0DE8000675DB /* Unit+CoreDataProperties.m */,
+				CB646AD422407FE4002EB7E4 /* Location+CoreDataProperties.h */,
+				CB646AD522407FE4002EB7E4 /* Location+CoreDataClass.h */,
+				CB646AD622407FE4002EB7E4 /* Location+CoreDataClass.m */,
+				CB646AD722407FE4002EB7E4 /* Location+CoreDataProperties.m */,
+				CB646AD822407FE4002EB7E4 /* LocationAtHome+CoreDataProperties.h */,
+				CB646AD922407FE4002EB7E4 /* LocationAtHome+CoreDataClass.h */,
+				CB646ADA22407FE4002EB7E4 /* LocationAtHome+CoreDataClass.m */,
+				CB646ADB22407FE4002EB7E4 /* LocationAtHome+CoreDataProperties.m */,
+				CB646ADC22407FE4002EB7E4 /* LocationAtShop+CoreDataProperties.h */,
+				CB646ADD22407FE4002EB7E4 /* LocationAtShop+CoreDataClass.h */,
+				CB646ADE22407FE4002EB7E4 /* LocationAtShop+CoreDataClass.m */,
+				CB646ADF22407FE4002EB7E4 /* LocationAtShop+CoreDataProperties.m */,
+				CB646AE022407FE4002EB7E4 /* Unit+CoreDataProperties.h */,
+				CB646AE122407FE4002EB7E4 /* Unit+CoreDataClass.h */,
+				CB646AE222407FE4002EB7E4 /* Unit+CoreDataClass.m */,
+				CB646AE322407FE4002EB7E4 /* Unit+CoreDataProperties.m */,
+				CB646AE422407FE4002EB7E4 /* Item+CoreDataProperties.h */,
+				CB646AE522407FE4002EB7E4 /* Item+CoreDataClass.h */,
+				CB646AE622407FE4002EB7E4 /* Item+CoreDataClass.m */,
+				CB646AE722407FE4002EB7E4 /* Item+CoreDataProperties.m */,
 				CB381D1E2234F48C00D16E87 /* Model.xcdatamodeld */,
 				CB381D172234E87600D16E87 /* Core Data Helper */,
 			);
@@ -306,6 +313,33 @@
 				CBAFBFBE223F8D7700EF35B7 /* LocationAtHomeTVC.m */,
 			);
 			name = LocationAtHomeTVC;
+			sourceTree = "<group>";
+		};
+		CBAFBFC3223F9B9600EF35B7 /* ShopLocations */ = {
+			isa = PBXGroup;
+			children = (
+				CBAFBFC5223F9BA200EF35B7 /* LocationAtShopVC */,
+				CBAFBFC4223F9B9C00EF35B7 /* LocationAtShopTVC */,
+			);
+			name = ShopLocations;
+			sourceTree = "<group>";
+		};
+		CBAFBFC4223F9B9C00EF35B7 /* LocationAtShopTVC */ = {
+			isa = PBXGroup;
+			children = (
+				CBAFBFC6223F9CB400EF35B7 /* LocationAtShopTVC.h */,
+				CBAFBFC7223F9CB400EF35B7 /* LocationAtShopTVC.m */,
+			);
+			name = LocationAtShopTVC;
+			sourceTree = "<group>";
+		};
+		CBAFBFC5223F9BA200EF35B7 /* LocationAtShopVC */ = {
+			isa = PBXGroup;
+			children = (
+				CBAFBFC9223F9CC300EF35B7 /* LocationAtShopVC.h */,
+				CBAFBFCA223F9CC300EF35B7 /* LocationAtShopVC.m */,
+			);
+			name = LocationAtShopVC;
 			sourceTree = "<group>";
 		};
 		CBB0D378223C86E5003FE8E4 /* ShopTVC */ = {
@@ -405,29 +439,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB7B00752235F0EF004ED213 /* Measurement+CoreDataClass.m in Sources */,
-				CB381D302234F90000D16E87 /* Item+CoreDataProperties.m in Sources */,
+				CB646AF022407FE4002EB7E4 /* Item+CoreDataClass.m in Sources */,
 				CB30B46F223F2E3F00CF4592 /* UnitVC.m in Sources */,
-				CB8459AA223A4FB900E759AE /* Unit+CoreDataProperties.m in Sources */,
-				CB381D312234F90000D16E87 /* Item+CoreDataClass.m in Sources */,
+				CBAFBFC8223F9CB400EF35B7 /* LocationAtShopTVC.m in Sources */,
 				CBAFBFBF223F8D7700EF35B7 /* LocationAtHomeTVC.m in Sources */,
-				CB85038322374364005884C1 /* Amount+CoreDataClass.m in Sources */,
-				CB85038422374364005884C1 /* Amount+CoreDataProperties.m in Sources */,
 				CBA4499E2234A23A0041ACA7 /* ViewController.m in Sources */,
-				CB0B6BFB223A0DE8000675DB /* Unit+CoreDataProperties.m in Sources */,
+				CBAFBFCB223F9CC300EF35B7 /* LocationAtShopVC.m in Sources */,
+				CB646AF122407FE4002EB7E4 /* Item+CoreDataProperties.m in Sources */,
+				CB646AEE22407FE4002EB7E4 /* Unit+CoreDataClass.m in Sources */,
 				CBA449AC2234A23B0041ACA7 /* main.m in Sources */,
 				CB0724DC223B61AD00CB463B /* PrepareTVC.m in Sources */,
+				CB646AED22407FE4002EB7E4 /* LocationAtShop+CoreDataProperties.m in Sources */,
+				CB646AEA22407FE4002EB7E4 /* LocationAtHome+CoreDataClass.m in Sources */,
+				CB646AEC22407FE4002EB7E4 /* LocationAtShop+CoreDataClass.m in Sources */,
 				CB850389223749CD005884C1 /* MigrationVC.m in Sources */,
 				CBAFBFC2223F8D9000EF35B7 /* LocationAtHomeVC.m in Sources */,
-				CB0B6BFA223A0DE8000675DB /* Unit+CoreDataClass.m in Sources */,
 				CBB0D37F223CFC8F003FE8E4 /* ItemVC.m in Sources */,
 				CBB0D383223E794E003FE8E4 /* UnitsTVC.m in Sources */,
-				CB7B00762235F0EF004ED213 /* Measurement+CoreDataProperties.m in Sources */,
+				CB646AEF22407FE4002EB7E4 /* Unit+CoreDataProperties.m in Sources */,
+				CB646AEB22407FE4002EB7E4 /* LocationAtHome+CoreDataProperties.m in Sources */,
 				CB8459AE223A567200E759AE /* CoreDataTVC.m in Sources */,
+				CB646AE922407FE4002EB7E4 /* Location+CoreDataProperties.m in Sources */,
+				CB646AE822407FE4002EB7E4 /* Location+CoreDataClass.m in Sources */,
 				CBB0D37B223C8706003FE8E4 /* ShopTVC.m in Sources */,
 				CB381D202234F48C00D16E87 /* Model.xcdatamodeld in Sources */,
 				CB381D162234A6AE00D16E87 /* CoreDataHelper.m in Sources */,
-				CB8459A8223A4FB900E759AE /* Item+CoreDataProperties.m in Sources */,
 				CBA4499B2234A23A0041ACA7 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
