@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
 #import "ShopTVC.h"
 #import "Item+CoreDataProperties.h"
+#import "Unit+CoreDataProperties.h"
 #import "ItemVC.h"
 
 @implementation ShopTVC

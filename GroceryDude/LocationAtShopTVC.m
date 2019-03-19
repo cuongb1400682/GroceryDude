@@ -52,6 +52,7 @@ static NSString * const locationAtShopIdentifier = @"LocationAtShop Cell";
                                                           forIndexPath:indexPath];
   LocationAtShop *locationAtShop = [[self frc] objectAtIndexPath:indexPath];
   [[cell textLabel] setText:[locationAtShop aisle]];
+  return cell;
 }
 
 #pragma mark - SEGUE

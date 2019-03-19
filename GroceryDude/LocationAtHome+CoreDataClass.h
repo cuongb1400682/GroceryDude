@@ -8,7 +8,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Location.h"
+#import "Location+CoreDataProperties.h"
 
 @class Item;
 
