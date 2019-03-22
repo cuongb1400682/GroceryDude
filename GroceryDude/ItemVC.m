@@ -61,6 +61,8 @@
   [self refreshInterface];
   [[self nameTextField] setDelegate:self];
   [[self quantityTextField] setDelegate:self];
+  [[self unitPickerTextField] setDelegate:self];
+  [[self unitPickerTextField] setPickerDelegate:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -162,6 +164,17 @@
 #endif
     }
   }
+}
+
+#pragma mark - PICKERS
+
+- (void)selectedObjectID:(NSManagedObjectID *)objectID
+      changedForPickerTF:(CoreDataPickerTF *)pickerTF {
+  
+}
+
+- (void)selectedObjectClearedForPickerTF:(CoreDataPickerTF *)pickerTF {
+  
 }
 
 @end

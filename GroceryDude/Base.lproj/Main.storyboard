@@ -112,9 +112,8 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
                                             </textField>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Peh-Ca-9G9">
-                                                <rect key="frame" x="96" y="76" width="144" height="48"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Peh-Ca-9G9">
+                                                <rect key="frame" x="346" y="76" width="48" height="162"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pe2-Jc-g6M">
                                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -128,7 +127,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4w-Kg-JnH">
-                                                        <rect key="frame" x="48" y="0.0" width="48" height="48"/>
+                                                        <rect key="frame" x="0.0" y="57" width="48" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="48" id="7UD-Ux-FKB"/>
                                                             <constraint firstAttribute="height" constant="48" id="KBU-KX-lbR"/>
@@ -139,7 +138,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEO-Fy-vhn">
-                                                        <rect key="frame" x="96" y="0.0" width="48" height="48"/>
+                                                        <rect key="frame" x="0.0" y="114" width="48" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="JsF-BZ-HIR"/>
                                                             <constraint firstAttribute="width" constant="48" id="VHk-oD-U4n"/>
@@ -151,14 +150,29 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Unit" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="StJ-1F-fYg" customClass="UnitPickerTF">
+                                                <rect key="frame" x="88" y="76" width="250" height="48"/>
+                                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="tpy-gK-RL8"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Vay-RP-wVI" firstAttribute="top" secondItem="tFH-Bl-0dJ" secondAttribute="bottom" constant="8" symbolic="YES" id="9c6-81-1n4"/>
+                                            <constraint firstItem="StJ-1F-fYg" firstAttribute="top" secondItem="tFH-Bl-0dJ" secondAttribute="bottom" constant="8" id="CXj-xY-W1o"/>
+                                            <constraint firstItem="Peh-Ca-9G9" firstAttribute="leading" secondItem="StJ-1F-fYg" secondAttribute="trailing" constant="8" id="NLE-YJ-94M"/>
                                             <constraint firstItem="tFH-Bl-0dJ" firstAttribute="top" secondItem="vdd-z0-VlL" secondAttribute="top" constant="20" symbolic="YES" id="Qap-yO-UuH"/>
+                                            <constraint firstItem="StJ-1F-fYg" firstAttribute="leading" secondItem="Vay-RP-wVI" secondAttribute="trailing" constant="8" id="UFz-gt-JHl"/>
+                                            <constraint firstAttribute="trailing" secondItem="Peh-Ca-9G9" secondAttribute="trailing" constant="20" id="W5h-2n-cWO"/>
                                             <constraint firstAttribute="trailing" secondItem="tFH-Bl-0dJ" secondAttribute="trailing" constant="20" symbolic="YES" id="WvX-PI-qgT"/>
                                             <constraint firstItem="tFH-Bl-0dJ" firstAttribute="leading" secondItem="vdd-z0-VlL" secondAttribute="leading" constant="20" symbolic="YES" id="X4v-sP-2nF"/>
                                             <constraint firstItem="Vay-RP-wVI" firstAttribute="leading" secondItem="vdd-z0-VlL" secondAttribute="leading" constant="20" symbolic="YES" id="hYh-Bk-l0v"/>
+                                            <constraint firstItem="Peh-Ca-9G9" firstAttribute="top" secondItem="tFH-Bl-0dJ" secondAttribute="bottom" constant="8" id="xYG-dT-4Gm"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -186,6 +200,7 @@
                         <outlet property="nameTextField" destination="tFH-Bl-0dJ" id="mFR-rr-CgH"/>
                         <outlet property="quantityTextField" destination="Vay-RP-wVI" id="waD-yh-7xi"/>
                         <outlet property="scrollView" destination="GGj-NP-lQH" id="Fk6-Yf-1an"/>
+                        <outlet property="unitPickerTextField" destination="StJ-1F-fYg" id="IEj-rT-mQd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WqB-eJ-rUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
