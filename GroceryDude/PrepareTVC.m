@@ -36,6 +36,7 @@ static NSString * const itemCellIdentifier = @"ItemCell";
 #if DEBUG
   NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
 #endif
+  CoreDataHelper *cdh = [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
 
   [super viewDidLoad];
   [self configureFetch];
@@ -45,6 +46,7 @@ static NSString * const itemCellIdentifier = @"ItemCell";
                                            selector:@selector(performFetch)
                                                name:@"SomethingChanged"
                                              object:nil];
+  
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView

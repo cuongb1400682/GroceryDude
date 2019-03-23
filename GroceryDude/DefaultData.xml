@@ -1,0 +1,8 @@
+<items>
+	<item name="Belt of Glory" unit="unit" locationathomeme="wardrope" locationshop="locationatshopgym toolkit"></item>
+	<item name="Trash bin of Golden" unit="unit" locationathome="bedroom" locationatshop="in-house stuff"></item>
+	<item name="Salmon" unit="kg" locationathome="fridge" locationatshop="frozen foods"></item>
+	<item name="Skim milk" unit="ml" locationathome="fridge" locationatshop="diary foods"></item>
+	<item name="Hand washing substance" unit="ml" locationathome="restroom" locationatshop="some aisle"></item>
+	<item name="TNT" unit="Tons" locationathome="underground" locationatshop="top roof"></item>
+</items>

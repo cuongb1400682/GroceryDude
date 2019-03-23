@@ -353,10 +353,18 @@ NSString *migrationProgress = @"migrationProgress";
                                                               preferredStyle:UIAlertControllerStyleAlert]];
   UIAlertAction *importAction = [UIAlertAction actionWithTitle:@"Import"
                                                          style:UIAlertActionStyleDefault
-                                                       handler:nil];
+                                                       handler:^(UIAlertAction * _Nonnull action) {
+                                                         [[self importContext] performBlock:^{
+                                                           NSURL *xmlURL = [[NSBundle mainBundle] URLForResource:@"DefaultData"
+                                                                                                   withExtension:@"xml"];
+                                                           [self importFromXML:xmlURL];
+                                                         }];
+                                                       }];
   UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
                                                          style:UIAlertActionStyleCancel
-                                                       handler:nil];
+                                                       handler:^(UIAlertAction * _Nonnull action) {
+                                                         [self setDefaultDataAsImportedForStore:[self store]];
+                                                       }];
   [[self importAlertController] addAction:importAction];
   [[self importAlertController] addAction:cancelAction];
 }
