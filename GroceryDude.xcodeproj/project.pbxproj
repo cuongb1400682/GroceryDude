@@ -38,6 +38,7 @@
 		CBB0D37B223C8706003FE8E4 /* ShopTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB0D37A223C8706003FE8E4 /* ShopTVC.m */; };
 		CBB0D37F223CFC8F003FE8E4 /* ItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB0D37E223CFC8F003FE8E4 /* ItemVC.m */; };
 		CBB0D383223E794E003FE8E4 /* UnitsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB0D382223E794E003FE8E4 /* UnitsTVC.m */; };
+		CBC22CBB2245F2D200A0E065 /* DefaultData.xml in Resources */ = {isa = PBXBuildFile; fileRef = CBC22CBA2245F2D200A0E065 /* DefaultData.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		CBB0D37E223CFC8F003FE8E4 /* ItemVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemVC.m; sourceTree = "<group>"; };
 		CBB0D381223E794E003FE8E4 /* UnitsTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitsTVC.h; sourceTree = "<group>"; };
 		CBB0D382223E794E003FE8E4 /* UnitsTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitsTVC.m; sourceTree = "<group>"; };
+		CBC22CBA2245F2D200A0E065 /* DefaultData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DefaultData.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,13 +173,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CB381D172234E87600D16E87 /* Core Data Helper */ = {
+		CB381D172234E87600D16E87 /* CoreDataHelper */ = {
 			isa = PBXGroup;
 			children = (
 				CB381D142234A6AE00D16E87 /* CoreDataHelper.h */,
 				CB381D152234A6AE00D16E87 /* CoreDataHelper.m */,
 			);
-			name = "Core Data Helper";
+			name = CoreDataHelper;
 			sourceTree = "<group>";
 		};
 		CB381D182234EB9B00D16E87 /* Supporting Files */ = {
@@ -207,6 +209,7 @@
 		CB381D1A2234EBCB00D16E87 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				CBC22CBA2245F2D200A0E065 /* DefaultData.xml */,
 				CB646AD422407FE4002EB7E4 /* Location+CoreDataProperties.h */,
 				CB646AD522407FE4002EB7E4 /* Location+CoreDataClass.h */,
 				CB646AD622407FE4002EB7E4 /* Location+CoreDataClass.m */,
@@ -264,7 +267,7 @@
 		CB646AF722408D4B002EB7E4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				CB381D172234E87600D16E87 /* Core Data Helper */,
+				CB381D172234E87600D16E87 /* CoreDataHelper */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBA449A92234A23B0041ACA7 /* LaunchScreen.storyboard in Resources */,
+				CBC22CBB2245F2D200A0E065 /* DefaultData.xml in Resources */,
 				CBA449A62234A23B0041ACA7 /* Assets.xcassets in Resources */,
 				CBA449A12234A23A0041ACA7 /* Main.storyboard in Resources */,
 			);

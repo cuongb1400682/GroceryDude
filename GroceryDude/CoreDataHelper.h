@@ -13,13 +13,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CoreDataHelper : NSObject
+@interface CoreDataHelper : NSObject <NSXMLParserDelegate>
 
 @property (nonatomic, readonly) NSManagedObjectContext *context;
 @property (nonatomic, readonly) NSManagedObjectModel * model;
 @property (nonatomic, readonly) NSPersistentStoreCoordinator *coordinator;
 @property (nonatomic, readonly) NSPersistentStore *store;
 @property (nonatomic, retain) MigrationVC *migrationVC;
+@property (nonatomic, retain) UIAlertController *importAlertController;
+@property (nonatomic, strong) NSXMLParser *parser;
+@property (nonatomic, readonly) NSManagedObjectContext *importContext;
 
 - (void)setupCoreData;
 - (void)saveContext;

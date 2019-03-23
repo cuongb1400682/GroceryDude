@@ -67,6 +67,11 @@ NSString *migrationProgress = @"migrationProgress";
     _coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_model];
     _context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [_context setPersistentStoreCoordinator:_coordinator];
+    _importContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    [_importContext performBlockAndWait:^{
+      [self->_importContext setPersistentStoreCoordinator:self->_coordinator];
+      [self->_importContext setUndoManager:nil];
+    }];
   }
   return self;
 }
@@ -309,6 +314,74 @@ NSString *migrationProgress = @"migrationProgress";
       });
     }
   });
+}
+
+#pragma mark - DATA IMPORT
+
+- (BOOL)isDefaultDataAlreadyImportedForStoreWithURL:(NSURL *)url
+                                             ofType:(NSString *)type {
+#if DEBUG
+  NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
+#endif
+  NSError *error = nil;
+  NSDictionary *metadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:type
+                                                                                      URL:url
+                                                                                  options:nil
+                                                                                    error:&error];
+  if (error) {
+    NSLog(@"Error getting metadata: %@", [error description]);
+    return NO;
+  }
+  
+  NSNumber *isDataImported = [metadata objectForKey:@"DefaultDataImported"];
+  
+#if DEBUG
+  NSLog([isDataImported boolValue]
+        ? @"Data is imported"
+        : @"Data is not imported");
+#endif
+  
+  return [isDataImported boolValue];
+}
+
+- (void)checkIfDefaultDataIsImported {
+#if DEBUG
+  NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
+#endif
+  [self setImportAlertController:[UIAlertController alertControllerWithTitle:@"Import Default Data?"
+                                                                     message:@"Press 'import' to start importing default data, or cancel to close this."
+                                                              preferredStyle:UIAlertControllerStyleAlert]];
+  UIAlertAction *importAction = [UIAlertAction actionWithTitle:@"Import"
+                                                         style:UIAlertActionStyleDefault
+                                                       handler:nil];
+  UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                         style:UIAlertActionStyleCancel
+                                                       handler:nil];
+  [[self importAlertController] addAction:importAction];
+  [[self importAlertController] addAction:cancelAction];
+}
+
+- (void)importFromXML:(NSURL *)url {
+#if DEBUG
+  NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
+#endif
+  NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+  [parser setDelegate:self];
+  [self setParser:parser];
+  
+  NSLog(@"CoreDataHelper: Start parsing: %@", [url path]);
+  [parser parse];
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"SomethingChanged"
+                                                      object:nil];
+  NSLog(@"CoreDataHelper: End parsing");
+}
+
+- (void)setDefaultDataAsImportedForStore:(NSPersistentStore *)store {
+  NSMutableDictionary *storeMetadata = [[store metadata] copy];
+  [storeMetadata setObject:@YES
+                    forKey:@"DefaultDataImported"];
+  [[self coordinator] setMetadata:storeMetadata
+               forPersistentStore:store];
 }
 
 @end
