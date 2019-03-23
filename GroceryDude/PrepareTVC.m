@@ -87,11 +87,17 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 #if DEBUG
   NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
 #endif
+  CoreDataHelper *cdh = [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+  NSError *error = nil;
+  Item *deleteTarget = nil;
+  
   if (editingStyle == UITableViewCellEditingStyleDelete) {
-    Item *deleteTarget = [self.frc objectAtIndexPath:indexPath];
-    [self.frc.managedObjectContext deleteObject:deleteTarget];
+    deleteTarget = [self.frc objectAtIndexPath:indexPath];
     [tableView deleteRowsAtIndexPaths:@[indexPath]
                      withRowAnimation:UITableViewRowAnimationFade];
+//    [[[self frc] managedObjectContext] deleteObject:deleteTarget];
+//    [self configureFetch];
+//    [[self frc] performFetch:&error];
   }
 }
 
@@ -123,7 +129,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-  return [[[[self frc] sections] objectAtIndex:section] numberOfObjects];
+//  return [[[[self frc] sections] objectAtIndex:section] numberOfObjects];
+  return [[[self frc] fetchedObjects] count];
 }
 
 #pragma mark - INTERACTION

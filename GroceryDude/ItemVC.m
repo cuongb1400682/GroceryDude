@@ -32,6 +32,9 @@
     [item setName:[textField text]];
   } else if ([self quantityTextField] == textField) {
     [item setQuantity:[[textField text] intValue]];
+  } else if ([self unitPickerTextField] == textField) {
+    [[self unitPickerTextField] fetch];
+    [[[self unitPickerTextField] picker] reloadAllComponents];
   }
 }
 
@@ -51,6 +54,8 @@
   [[self nameTextField] setText:[selectedItem name]];
   NSString * const quantityString = [NSString stringWithFormat:@"%d", [selectedItem quantity]];
   [[self quantityTextField] setText:quantityString];
+  [[self unitPickerTextField] setText:[[selectedItem unit] name]];
+  [[self unitPickerTextField] setSelectedObjectID:[[selectedItem unit] objectID]];
 }
 
 - (void)viewDidLoad {
@@ -170,11 +175,59 @@
 
 - (void)selectedObjectID:(NSManagedObjectID *)objectID
       changedForPickerTF:(CoreDataPickerTF *)pickerTF {
+#if DEBUG
+  NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
+#endif
+  if (![self selectedItemID]) {
+    return;
+  }
   
+  NSError *error = nil;
+  CoreDataHelper *cdh = [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+  Item *selectedItem = [[cdh context] existingObjectWithID:[self selectedItemID]
+                                                     error:&error];
+  
+  if (pickerTF == [self unitPickerTextField]) {
+    Unit *selectedUnit = [[cdh context] existingObjectWithID:objectID
+                                                       error:&error];
+    
+    if (!error) {
+      [selectedItem setUnit:selectedUnit];
+      [[self unitPickerTextField] setText:[selectedUnit name]];
+    }
+  }
+  
+  [self refreshInterface];
+
+  if (error) {
+    NSLog(@"Error select object: %@", [error description]);
+  }
 }
 
 - (void)selectedObjectClearedForPickerTF:(CoreDataPickerTF *)pickerTF {
+#if DEBUG
+  NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
+#endif
+  if (![self selectedItemID]) {
+    return;
+  }
   
+  NSError *error = nil;
+  CoreDataHelper *cdh = [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+  Item *item = [[cdh context] existingObjectWithID:[self selectedItemID]
+                                             error:&error];
+  
+  if (error) {
+    NSLog(@"Error selecte object: %@", [error description]);
+    return;
+  }
+  
+  if (pickerTF == [self unitPickerTextField]) {
+    [item setUnit:nil];
+    [[self unitPickerTextField] setText:@""];
+  }
+  
+  [self refreshInterface];
 }
 
 @end

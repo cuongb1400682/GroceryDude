@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UnitPickerTF : CoreDataPickerTF
 
+- (void)fetch;
+
 @end
 
 NS_ASSUME_NONNULL_END
