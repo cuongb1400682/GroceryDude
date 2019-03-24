@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 
 #import "MigrationVC.h"
+#import "CoreDataImporter.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

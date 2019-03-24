@@ -39,6 +39,7 @@
 		CBB0D37F223CFC8F003FE8E4 /* ItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB0D37E223CFC8F003FE8E4 /* ItemVC.m */; };
 		CBB0D383223E794E003FE8E4 /* UnitsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB0D382223E794E003FE8E4 /* UnitsTVC.m */; };
 		CBC22CBB2245F2D200A0E065 /* DefaultData.xml in Resources */ = {isa = PBXBuildFile; fileRef = CBC22CBA2245F2D200A0E065 /* DefaultData.xml */; };
+		CBC22CBF2245FEAC00A0E065 /* CoreDataImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC22CBE2245FEAC00A0E065 /* CoreDataImporter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,8 @@
 		CBB0D381223E794E003FE8E4 /* UnitsTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitsTVC.h; sourceTree = "<group>"; };
 		CBB0D382223E794E003FE8E4 /* UnitsTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitsTVC.m; sourceTree = "<group>"; };
 		CBC22CBA2245F2D200A0E065 /* DefaultData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DefaultData.xml; sourceTree = "<group>"; };
+		CBC22CBD2245FEAC00A0E065 /* CoreDataImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataImporter.h; sourceTree = "<group>"; };
+		CBC22CBE2245FEAC00A0E065 /* CoreDataImporter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataImporter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +270,7 @@
 		CB646AF722408D4B002EB7E4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CBC22CBC2245FE9100A0E065 /* CoreDataImporter */,
 				CB381D172234E87600D16E87 /* CoreDataHelper */,
 			);
 			name = Utils;
@@ -409,6 +413,15 @@
 			name = UnitsTVC;
 			sourceTree = "<group>";
 		};
+		CBC22CBC2245FE9100A0E065 /* CoreDataImporter */ = {
+			isa = PBXGroup;
+			children = (
+				CBC22CBD2245FEAC00A0E065 /* CoreDataImporter.h */,
+				CBC22CBE2245FEAC00A0E065 /* CoreDataImporter.m */,
+			);
+			name = CoreDataImporter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -490,6 +503,7 @@
 				CB646AEE22407FE4002EB7E4 /* Unit+CoreDataClass.m in Sources */,
 				CBA449AC2234A23B0041ACA7 /* main.m in Sources */,
 				CB0724DC223B61AD00CB463B /* PrepareTVC.m in Sources */,
+				CBC22CBF2245FEAC00A0E065 /* CoreDataImporter.m in Sources */,
 				CB646AED22407FE4002EB7E4 /* LocationAtShop+CoreDataProperties.m in Sources */,
 				CB646AEA22407FE4002EB7E4 /* LocationAtHome+CoreDataClass.m in Sources */,
 				CB646AEC22407FE4002EB7E4 /* LocationAtShop+CoreDataClass.m in Sources */,

@@ -12,8 +12,8 @@
 
 #pragma mark - CONSTANTS
 
-NSString *storeFileName = @"Grocery-Dude.sqlite";
-NSString *migrationProgress = @"migrationProgress";
+NSString *const storeFileName = @"Grocery-Dude.sqlite";
+NSString *const migrationProgress = @"migrationProgress";
 
 #pragma mark - PATHS
 
@@ -116,8 +116,8 @@ NSString *migrationProgress = @"migrationProgress";
 #if DEBUG
   NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
 #endif
-  
-  [self loadStore];
+//  [self loadStore];
+  [self checkIfDefaultDataIsImported];
 }
 
 #pragma mark - SAVING
@@ -348,6 +348,11 @@ NSString *migrationProgress = @"migrationProgress";
 #if DEBUG
   NSLog(@"Running %@, '%@'", [self class], NSStringFromSelector(_cmd));
 #endif
+  if ([self isDefaultDataAlreadyImportedForStoreWithURL:[self storeURL]
+                                                 ofType:NSSQLiteStoreType]) {
+    return;
+  }
+
   [self setImportAlertController:[UIAlertController alertControllerWithTitle:@"Import Default Data?"
                                                                      message:@"Press 'import' to start importing default data, or cancel to close this."
                                                               preferredStyle:UIAlertControllerStyleAlert]];
@@ -367,6 +372,10 @@ NSString *migrationProgress = @"migrationProgress";
                                                        }];
   [[self importAlertController] addAction:importAction];
   [[self importAlertController] addAction:cancelAction];
+  UIViewController *vc = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+  [vc presentViewController:[self importAlertController]
+                   animated:NO
+                 completion:nil];
 }
 
 - (void)importFromXML:(NSURL *)url {
@@ -392,5 +401,80 @@ NSString *migrationProgress = @"migrationProgress";
                forPersistentStore:store];
 }
 
-@end
+#pragma mark - UNIQUE ATTRIBUTE SECTION
 
+- (NSDictionary *)selectedUniqueAttributes {
+  return @{@"Item": @"name",
+           @"Unit": @"name",
+           @"LocationAtHome": @"storedIn",
+           @"LocationAtShop": @"aisle"};
+}
+
+#pragma mark - DELEGATE: XMLParser
+
+- (void)parser:(NSXMLParser *)parser
+parseErrorOccurred:(NSError *)parseError {
+  NSLog(@"XML parse with problem: %@", [parseError description]);
+}
+
+- (void)parser:(NSXMLParser *)parser
+didStartElement:(NSString *)elementName
+  namespaceURI:(NSString *)namespaceURI
+ qualifiedName:(NSString *)qName
+    attributes:(NSDictionary<NSString *,NSString *> *)attributeDict {
+  if (![elementName isEqualToString:@"item"]) {
+    return;
+  }
+  
+  [[self importContext] performBlockAndWait:^{
+    CoreDataImporter *importer = [[CoreDataImporter alloc] initWithUniqueAttributes:[self selectedUniqueAttributes]];
+    
+    NSManagedObject *item = [importer insertBasicObjectInTargetEntity:@"Item"
+                                                targetEntityAttribute:@"name"
+                                                   sourceXMLAttribute:@"name"
+                                                        attributeDict:attributeDict
+                                                              context:[self importContext]];
+    
+    NSManagedObject *unit = [importer insertBasicObjectInTargetEntity:@"Unit"
+                                                targetEntityAttribute:@"name"
+                                                   sourceXMLAttribute:@"unit"
+                                                        attributeDict:attributeDict
+                                                              context:[self importContext]];
+    
+    NSManagedObject *locationAtHome = [importer insertBasicObjectInTargetEntity:@"LocationAtHome"
+                                                          targetEntityAttribute:@"storedIn"
+                                                             sourceXMLAttribute:@"locationathome"
+                                                                  attributeDict:attributeDict
+                                                                        context:[self importContext]];
+    
+    NSManagedObject *locationAtShop = [importer insertBasicObjectInTargetEntity:@"LocationAtShop"
+                                                          targetEntityAttribute:@"aisle"
+                                                             sourceXMLAttribute:@"locationatshop"
+                                                                  attributeDict:attributeDict
+                                                                        context:[self importContext]];
+    
+    [item setValue:@NO
+            forKey:@"listed"];
+    [item setValue:unit
+            forKey:@"unit"];
+    [item setValue:locationAtHome
+            forKey:@"locationAtHome"];
+    [item setValue:locationAtShop
+            forKey:@"locationAtShop"];
+    
+    NSLog(@"Add %@", [attributeDict description]);
+    
+    [CoreDataImporter saveContext:[self importContext]];
+    
+    [[self importContext] refreshObject:item
+                           mergeChanges:NO];
+    [[self importContext] refreshObject:unit
+                           mergeChanges:NO];
+    [[self importContext] refreshObject:locationAtHome
+                           mergeChanges:NO];
+    [[self importContext] refreshObject:locationAtShop
+                           mergeChanges:NO];
+  }];
+}
+
+@end
